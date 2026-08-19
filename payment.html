@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Error.404 — AI-Powered Construction Intelligence</title>
+<title>kibtoon ai services — AI-Powered Construction Intelligence</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<title>Secure Checkout | Error.404</title>
-<meta name="description" content="Secure checkout for Error.404 construction AI engagements.">
+<title>Secure Checkout | kibtoon ai services</title>
+<meta name="description" content="Secure checkout for kibtoon ai services construction AI engagements.">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
@@ -37,265 +37,236 @@
 </script>
 
 <style>
-<style>
+
   html{scroll-behavior:smooth;}
   body{overflow-x:hidden;}
-  .reveal{opacity:0; transform:translateY(22px); transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1);}
+
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .6s cubic-bezier(.2,.7,.2,1), transform .6s cubic-bezier(.2,.7,.2,1);}
   .reveal.in{opacity:1; transform:translateY(0);}
   @media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none; transition:none;} html{scroll-behavior:auto;} }
 
-  .hero-bg{ background-image:url('GREEN.jpg'); background-size:cover; background-position:center 35%; }
-  .grain{ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
-
-  .panel-bg{ background-image:url('panel-bg.jpg'); background-size:cover; background-position:center; }
-
-  .scroll-line{position:relative; overflow:hidden;}
-  .scroll-line::after{content:"";position:absolute;top:-100%;left:0;width:100%;height:100%;background:#FBFAF5;animation:scrolldrop 2.2s ease-in-out infinite;}
-  @keyframes scrolldrop{0%{top:-100%}60%{top:100%}100%{top:100%}}
-
-  .ping-ring::after{content:"";position:absolute;inset:0;border-radius:9999px;background:#B9C09E;animation:pingring 1.8s cubic-bezier(.2,.7,.3,1) infinite;}
-  @keyframes pingring{0%{transform:scale(1); opacity:.7;}100%{transform:scale(2.6); opacity:0;}}
-
-  .msg-in{animation:msgIn .25s ease;}
-  @keyframes msgIn{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
-
-  .typing-dot{animation:typingDot 1.2s ease infinite;}
-  .typing-dot:nth-child(2){animation-delay:.15s;}
-  .typing-dot:nth-child(3){animation-delay:.3s;}
-  @keyframes typingDot{0%,60%,100%{opacity:.35; transform:translateY(0);}30%{opacity:1; transform:translateY(-3px);}}
-
-  .method-item p{max-height:0; overflow:hidden; opacity:0; transition:max-height .4s ease, opacity .35s ease, margin .3s ease;}
-  .method-item.active p{max-height:100px; opacity:1; margin-top:6px;}
-
-  .faq-a{max-height:0; overflow:hidden; opacity:0; transition:max-height .4s ease, opacity .3s ease;}
-  .faq-item.open .faq-a{max-height:200px; opacity:1; margin-top:12px;}
-  .faq-icon-v{transition:transform .3s ease, opacity .3s ease;}
-  .faq-item.open .faq-icon-v{transform:rotate(90deg); opacity:0;}
-
-  .ai-chat.dragging, .ai-chat.dragging *{cursor:grabbing!important;}
-  .ai-chat-window{opacity:0; transform:translateY(16px) scale(.97); pointer-events:none; transition:opacity .28s ease, transform .28s cubic-bezier(.2,.7,.2,1);}
-  .ai-chat.open .ai-chat-window{opacity:1; transform:translateY(0) scale(1); pointer-events:all;}
-
-  /* ---------- Nav scroll-spy: active section indicator ---------- */
-  .nav-link{ position:relative; padding-bottom:5px; }
-  .nav-link::after{
-    content:"";
-    position:absolute; left:0; right:0; bottom:-2px;
-    height:2px; border-radius:2px;
-    background:currentColor;
-    transform:scaleX(0); transform-origin:left;
-    opacity:.55;
-    transition:transform .35s cubic-bezier(.2,.7,.2,1), opacity .3s ease, background-color .3s ease;
+  /* Extremely subtle architectural grid — precision, not a blueprint */
+  .arch-grid{
+    background-image:
+      linear-gradient(to right, rgba(24,26,19,0.028) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(24,26,19,0.028) 1px, transparent 1px);
+    background-size: 56px 56px;
   }
-  .nav-link:hover::after{ transform:scaleX(1); }
-  .nav-link.nav-active{ font-weight:600; opacity:1 !important; color:#B9C09E !important; }
-  .nav-link.nav-active::after{ transform:scaleX(1); opacity:1; background:#B9C09E; }
-  header.is-scrolled .nav-link.nav-active{ color:#5C7A44 !important; }
-  header.is-scrolled .nav-link.nav-active::after{ background:#5C7A44; }
 
-  /* ---------- Premium "arrived" pulse for anchor-jump targets ---------- */
-  @keyframes sectionPulse{
-    0%{ box-shadow: inset 0 0 0 0 rgba(135,144,107,0); }
-    30%{ box-shadow: inset 0 0 70px 12px rgba(135,144,107,0.14); }
-    100%{ box-shadow: inset 0 0 0 0 rgba(135,144,107,0); }
+  /* Editorial, thin-border form fields — no boxy rounded input look */
+  .field-input{
+    width:100%; background:transparent; border:0; border-bottom:1px solid rgba(24,26,19,0.14);
+    padding:10px 0 10px 0; font-size:15px; outline:none; transition:border-color .25s ease;
+    color:#181A13;
   }
-  .section-pulse{ animation:sectionPulse 1.3s ease; }
-</style>
+  .field-input::placeholder{ color:rgba(75,78,63,0.35); }
+  .field-input:focus{ border-bottom-color:#181A13; }
+
+  .spinner{
+    width:22px; height:22px; border-radius:9999px;
+    border:1.5px solid rgba(24,26,19,0.15); border-top-color:#181A13;
+    animation:spin .8s linear infinite;
+  }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+
+  .plan-row{ transition: background-color .25s ease; }
+  .plan-row:hover{ background-color: rgba(24,26,19,0.02); }
 
 </style>
 </head>
 <body class="bg-cream text-ink font-sans antialiased">
 
-<header id="site-header" class="fixed top-0 left-0 right-0 z-[100] py-5 transition-all duration-300 border-b border-transparent">
-  <div class="max-w-[1180px] mx-auto px-8 flex items-center justify-between">
-    <a href="index.html#top" id="logoLink" class="flex items-center gap-2.5 font-serif text-[19px] tracking-tight text-paper transition-colors duration-300">
-      <span class="w-[30px] h-[30px] rounded-full flex items-center justify-center shadow-[inset_0_0_0_1px_rgba(255,255,255,0.15)]" style="background:radial-gradient(circle at 35% 30%, #4a5a3c, #1a260f 70%);">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#F6F4EB" stroke-width="1.4" class="w-4 h-4"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l2.8 2.8M16.2 16.2 19 19M19 5l-2.8 2.8M7.8 16.2 5 19"/></svg>
+
+<!-- ================= MINIMAL CHECKOUT HEADER ================= -->
+<header class="border-b border-black/[0.08] bg-paper">
+  <div class="max-w-[1300px] mx-auto px-6 md:px-10 h-[74px] flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2.5 font-serif text-[17px] tracking-tight text-ink">
+      <span class="w-[24px] h-[24px] rounded-full flex items-center justify-center flex-shrink-0" style="background:radial-gradient(circle at 35% 30%, #4a5a3c, #1a260f 70%);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F6F4EB" stroke-width="1.6" class="w-3 h-3"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l2.8 2.8M16.2 16.2 19 19M19 5l-2.8 2.8M7.8 16.2 5 19"/></svg>
       </span>
-      Error.404
+      kibtoon ai services
     </a>
-    <nav class="hidden md:flex gap-9 text-[14.5px] font-medium">
-      <a href="index.html#work" class="nav-link text-paper opacity-90 hover:opacity-100 transition">Projects</a>
-      <a href="index.html#pricing" class="nav-link text-paper opacity-90 hover:opacity-100 transition">Services</a>
-      <a href="index.html#method" class="nav-link text-paper opacity-90 hover:opacity-100 transition">Process</a>
-      <a href="index.html#briefings" class="nav-link text-paper opacity-90 hover:opacity-100 transition">Journal</a>
-    </nav>
-    <div class="flex items-center gap-3">
-        <a href="#" id="navCta" class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cream text-ink text-[13.5px] font-semibold border border-cream hover:bg-forest900 hover:text-paper transition">Book Consultation</a>
-      <button id="navToggle" aria-label="Open menu" class="md:hidden flex flex-col items-center justify-center gap-[5px] w-[38px] h-[38px] rounded-full border border-white/35 text-paper transition-colors">
-        <span class="w-[15px] h-[1.4px] bg-current rounded transition-transform duration-300"></span>
-        <span class="w-[15px] h-[1.4px] bg-current rounded transition-opacity duration-200"></span>
-        <span class="w-[15px] h-[1.4px] bg-current rounded transition-transform duration-300"></span>
-      </button>
-    </div>
+    <span class="hidden md:block font-mono text-[10.5px] uppercase tracking-[0.18em] text-inksoft">Secure Checkout</span>
+    <a href="index.html#pricing" class="font-mono text-[11px] uppercase tracking-wide text-inksoft hover:text-ink transition">Back to kibtoon ai services</a>
   </div>
 </header>
 
-
-<div id="mobileMenu" class="fixed inset-0 z-[98] bg-forest950 flex flex-col items-center justify-center gap-8 -translate-y-4 opacity-0 pointer-events-none transition-all duration-500">
-  <nav class="flex flex-col items-center gap-6">
-    <a href="index.html#work" class="text-paper font-serif text-[28px]">Projects</a>
-    <a href="index.html#pricing" class="text-paper font-serif text-[28px]">Services</a>
-    <a href="index.html#method" class="text-paper font-serif text-[28px]">Process</a>
-    <a href="index.html#briefings" class="text-paper font-serif text-[28px]">Journal</a>
-  </nav>
-  <a href="#" id="mobileNavCta" class="mt-2 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-cream text-ink text-sm font-semibold ">Book Consultation</a>
-</div>
-
-
-
-<!-- ================= PAYMENT / CHECKOUT (dual mode) ================= -->
-<main id="paymentMain" class="pt-[104px]">
+<main id="paymentMain" class="arch-grid min-h-[80vh]">
 
   <!-- ===== MODE 1: CHOOSE A PLAN (no ?plan param) ===== -->
-  <section id="planChooser" class="hidden py-20 md:py-[100px]">
-    <div class="max-w-[1180px] mx-auto px-8">
-      <a href="index.html#pricing" class="reveal in inline-flex items-center gap-1.5 text-[13px] font-semibold text-sage mb-6">&larr; Back to Error.404</a>
-      <div class="reveal in font-mono uppercase tracking-widest text-[11.5px] font-medium mb-4">Checkout</div>
-      <h1 class="reveal in font-serif font-medium text-[30px] sm:text-[38px] md:text-[44px] tracking-tight mb-12">Choose Your Build Intelligence</h1>
-      <div id="planChooserGrid" class="reveal grid md:grid-cols-3 gap-4.5 gap-y-5"></div>
+  <section id="planChooser" class="hidden py-16 md:py-24">
+    <div class="max-w-[900px] mx-auto px-6 md:px-8">
+      <div class="reveal in font-mono uppercase tracking-[0.18em] text-[11px] text-sage mb-4">Checkout</div>
+      <h1 class="reveal in font-serif font-medium text-[32px] sm:text-[40px] md:text-[46px] tracking-tight mb-14">Choose Your Build Intelligence</h1>
+      <div id="planChooserList" class="reveal divide-y divide-black/10 border-t border-b border-black/10"></div>
     </div>
   </section>
 
   <!-- ===== MODE 2: SINGLE PLAN CHECKOUT (?plan=...) ===== -->
-  <section id="planCheckout" class="hidden py-10 md:py-16">
-    <div class="max-w-5xl mx-auto px-4 md:px-8">
-      <div class="reveal in bg-paper rounded-[30px] shadow-2xl overflow-hidden flex flex-col md:flex-row relative border border-black/[0.07]">
+  <section id="planCheckout" class="hidden py-14 md:py-20">
+    <div class="max-w-[1220px] mx-auto px-6 md:px-10">
+      <div class="reveal in grid md:grid-cols-[45%_55%] gap-12 md:gap-0">
 
-        <!-- LEFT: brand / plan summary -->
-        <div class="bg-forest900 text-paper p-8 md:p-12 w-full md:w-[42%] flex flex-col justify-between relative overflow-hidden md:min-h-[640px]">
-          <div class="absolute top-[-80px] right-[-80px] w-48 h-48 rounded-full bg-white/5 pointer-events-none"></div>
-          <div class="absolute bottom-[-60px] left-[-60px] w-32 h-32 rounded-full bg-white/5 pointer-events-none"></div>
-          <div>
-            <a href="index.html#pricing" class="inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-sagelight mb-8">&larr; Back to Plans</a>
-            <div class="flex items-center gap-3 mb-6">
-              <span class="w-10 h-10 rounded-full flex items-center justify-center shadow-[inset_0_0_0_1px_rgba(255,255,255,0.2)]" style="background:radial-gradient(circle at 35% 30%, #5b6a49, #1a260f 75%);">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#F6F4EB" stroke-width="1.4" class="w-5 h-5"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l2.8 2.8M16.2 16.2 19 19M19 5l-2.8 2.8M7.8 16.2 5 19"/></svg>
-              </span>
-              <div>
-                <span class="font-serif text-[20px] tracking-tight block leading-none">Error.404</span>
-                <span class="font-mono text-[10px] uppercase tracking-widest text-sagelight">Secure Checkout</span>
-              </div>
-            </div>
-            <h3 class="font-serif text-[26px] md:text-[32px] font-medium leading-tight mb-4">Secure your build intelligence.</h3>
-            <p class="text-white/70 text-[14px] leading-relaxed mb-8">You're one step away from bringing AI-powered construction intelligence to your site.</p>
+        <!-- LEFT: editorial plan summary -->
+        <div class="md:pr-14">
+          <div class="font-mono uppercase tracking-[0.18em] text-[11px] text-sage mb-4" id="planSummaryCategory"></div>
+          <h1 class="font-serif font-medium text-[32px] md:text-[38px] tracking-tight mb-3" id="planSummaryName"></h1>
+          <p class="text-inksoft text-[14px] leading-relaxed mb-9 max-w-[380px]" id="planSummaryDescription"></p>
 
-            <div class="border-t border-white/10 pt-6">
-              <div id="planSummaryCategory" class="font-mono text-[10.5px] uppercase tracking-wide text-sagelight mb-2"></div>
-              <div id="planSummaryName" class="font-serif text-[22px] font-medium mb-1"></div>
-              <div id="planSummaryPrice" class="text-white/70 text-[14px] mb-5"></div>
-              <ul id="planSummaryFeatures" class="flex flex-col gap-2"></ul>
-            </div>
+          <div class="flex items-end gap-2.5 mb-10">
+            <span class="font-serif text-[52px] md:text-[58px] font-medium leading-none" id="planSummaryPriceBig"></span>
+            <span class="font-mono text-[11px] uppercase tracking-wide text-inksoft mb-2" id="planSummaryPriceUnit"></span>
           </div>
 
-          <div class="mt-8 md:mt-0 border-t border-white/10 pt-6">
-            <div class="font-mono text-[10px] uppercase tracking-widest text-sagelight mb-2">Secure Payment</div>
-            <p class="text-[12.5px] text-white/60 leading-relaxed">Payments are processed securely through Stripe's hosted checkout. Card details are entered directly on Stripe's page — Error.404 never receives or stores your card number.</p>
+          <ul id="planSummaryFeatures" class="flex flex-col gap-3 mb-12 max-w-[380px]"></ul>
+
+          <div class="border-t border-black/10 pt-7">
+            <div class="font-mono uppercase tracking-[0.18em] text-[10.5px] text-sage mb-5">Project Intelligence</div>
+            <dl id="planSpecSheet" class="grid grid-cols-2 gap-y-4 gap-x-4 text-[13px] max-w-[380px]"></dl>
           </div>
         </div>
 
-        <!-- RIGHT: checkout card -->
-        <div class="p-8 md:p-12 w-full md:w-[58%] bg-paper relative">
-          <div class="mb-6">
-            <span class="font-mono text-[10px] uppercase tracking-widest text-sage">Complete Purchase</span>
-            <h4 class="font-serif text-[24px] font-medium mt-1" id="planName"></h4>
-          </div>
-          <div class="flex justify-between items-center bg-cream2/60 p-4 rounded-2xl border border-black/5 mb-7">
-            <span class="text-inksoft text-sm">Plan Total</span>
-            <span class="font-serif text-[28px] font-medium text-ink" id="planPrice"></span>
-          </div>
+        <!-- RIGHT: checkout -->
+        <div class="md:pl-14 md:border-l md:border-black/10">
+          <div class="font-mono uppercase tracking-[0.18em] text-[10.5px] text-sage mb-2">Complete Purchase</div>
+          <h2 class="font-serif text-[22px] font-medium mb-1" id="planName"></h2>
+          <div class="text-inksoft text-[13.5px] mb-10" id="planPrice"></div>
 
           <!-- Checkout form (purchasable plans) -->
           <form id="checkoutForm">
-            <div class="mb-2">
-              <div class="font-mono text-[10.5px] uppercase tracking-wide text-inksoft mb-3">Customer Information</div>
-              <div class="grid sm:grid-cols-2 gap-4 mb-4">
-                <div>
-                  <label for="custName" class="block font-mono text-[10.5px] uppercase tracking-wide text-inksoft mb-2">Full Name</label>
-                  <input type="text" id="custName" name="custName" placeholder="Jane Doe" required class="w-full border border-black/10 bg-cream2 rounded-xl px-4 py-3.5 text-sm outline-none focus:border-sage focus:bg-paper transition placeholder:text-inksoft/40">
-                </div>
-                <div>
-                  <label for="custEmail" class="block font-mono text-[10.5px] uppercase tracking-wide text-inksoft mb-2">Email Address</label>
-                  <input type="email" id="custEmail" name="custEmail" placeholder="jane@company.com" required class="w-full border border-black/10 bg-cream2 rounded-xl px-4 py-3.5 text-sm outline-none focus:border-sage focus:bg-paper transition placeholder:text-inksoft/40">
-                </div>
+
+            <!-- 01 / CUSTOMER DETAILS -->
+            <div class="mb-11">
+              <div class="flex items-baseline gap-2.5 mb-6">
+                <span class="font-mono text-[11px] text-sage">01</span>
+                <span class="font-mono uppercase tracking-[0.18em] text-[11px] text-inksoft">Customer Details</span>
               </div>
-              <div class="grid sm:grid-cols-2 gap-4">
+              <div class="grid sm:grid-cols-2 gap-x-6 gap-y-6">
                 <div>
-                  <label for="custCompany" class="block font-mono text-[10.5px] uppercase tracking-wide text-inksoft mb-2">Company</label>
-                  <input type="text" id="custCompany" name="custCompany" placeholder="Company name" class="w-full border border-black/10 bg-cream2 rounded-xl px-4 py-3.5 text-sm outline-none focus:border-sage focus:bg-paper transition placeholder:text-inksoft/40">
+                  <label for="custName" class="block font-mono text-[10px] uppercase tracking-wide text-inksoft mb-2">Full Name</label>
+                  <input type="text" id="custName" name="custName" placeholder="John Smith" required class="field-input">
                 </div>
                 <div>
-                  <label for="custPhone" class="block font-mono text-[10.5px] uppercase tracking-wide text-inksoft mb-2">Phone Number</label>
-                  <input type="tel" id="custPhone" name="custPhone" placeholder="+1 234 567 8900" required class="w-full border border-black/10 bg-cream2 rounded-xl px-4 py-3.5 text-sm outline-none focus:border-sage focus:bg-paper transition placeholder:text-inksoft/40">
+                  <label for="custEmail" class="block font-mono text-[10px] uppercase tracking-wide text-inksoft mb-2">Email Address</label>
+                  <input type="email" id="custEmail" name="custEmail" placeholder="john@company.com" required class="field-input">
+                </div>
+                <div>
+                  <label for="custCompany" class="block font-mono text-[10px] uppercase tracking-wide text-inksoft mb-2">Company</label>
+                  <input type="text" id="custCompany" name="custCompany" placeholder="Company name" class="field-input">
+                </div>
+                <div>
+                  <label for="custPhone" class="block font-mono text-[10px] uppercase tracking-wide text-inksoft mb-2">Phone</label>
+                  <input type="tel" id="custPhone" name="custPhone" placeholder="+1 234 567 8900" required class="field-input">
                 </div>
               </div>
             </div>
 
-            <div class="mt-6 pt-6 border-t border-black/10">
-              <div class="font-mono text-[10.5px] uppercase tracking-wide text-inksoft mb-3">Payment</div>
-              <div class="flex items-center gap-3 border border-black/10 bg-cream2 rounded-xl px-4 py-3.5">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="text-sage flex-shrink-0"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11Z"/></svg>
+            <!-- 02 / PAYMENT METHOD -->
+            <div class="mb-11">
+              <div class="flex items-baseline gap-2.5 mb-6">
+                <span class="font-mono text-[11px] text-sage">02</span>
+                <span class="font-mono uppercase tracking-[0.18em] text-[11px] text-inksoft">Payment Method</span>
+              </div>
+              <div class="flex items-center gap-3 border border-black/10 px-4 py-3.5">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="text-sage flex-shrink-0"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11Z"/></svg>
                 <span class="text-[13px] text-inksoft leading-relaxed">You'll enter your card details on Stripe's secure, hosted checkout page in the next step.</span>
               </div>
             </div>
 
-            <div class="flex items-start gap-3 mt-6 mb-6">
-              <input type="checkbox" id="agreeTerms" required class="mt-1 w-4 h-4 rounded border-black/10 text-forest900 focus:ring-forest900 accent-forest900">
-              <label for="agreeTerms" class="text-[12.5px] text-inksoft leading-relaxed cursor-pointer">
-                I agree to the <a href="#" class="text-ink underline hover:no-underline">Terms of Service</a> and <a href="#" class="text-ink underline hover:no-underline">Privacy Policy</a>.
-              </label>
+            <!-- 03 / CONFIRM & PAY -->
+            <div>
+              <div class="flex items-baseline gap-2.5 mb-6">
+                <span class="font-mono text-[11px] text-sage">03</span>
+                <span class="font-mono uppercase tracking-[0.18em] text-[11px] text-inksoft">Confirm &amp; Pay</span>
+              </div>
+
+              <div class="mb-7">
+                <div class="flex justify-between text-[13.5px] py-3 border-b border-black/10">
+                  <span class="text-inksoft" id="summaryPlanLabel"></span>
+                  <span id="summaryPlanAmount"></span>
+                </div>
+                <div class="flex justify-between text-[13.5px] py-3 border-b border-black/10">
+                  <span class="text-inksoft">Subtotal</span>
+                  <span id="summarySubtotal"></span>
+                </div>
+                <div class="flex justify-between text-[15.5px] font-medium py-3.5">
+                  <span>Total</span>
+                  <span id="summaryTotal"></span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 mb-7">
+                <input type="checkbox" id="agreeTerms" required class="mt-1 w-4 h-4 border-black/20 text-forest900 focus:ring-forest900 accent-forest900">
+                <label for="agreeTerms" class="text-[12.5px] text-inksoft leading-relaxed cursor-pointer">
+                  I agree to the <a href="#" class="text-ink underline hover:no-underline">Terms of Service</a> and <a href="#" class="text-ink underline hover:no-underline">Privacy Policy</a>.
+                </label>
+              </div>
+
+              <div id="formError" role="alert" class="hidden text-[12.5px] text-[#8a5a2b] bg-[#8a5a2b0d] border border-[#8a5a2b33] px-3.5 py-2.5 mb-5"></div>
+
+              <button type="submit" id="payBtn" class="group w-full h-[56px] bg-ink text-cream text-[14.5px] font-semibold tracking-wide hover:bg-[#2a2d20] transition-colors flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed">
+                <span id="payBtnLabel">Confirm &amp; Pay</span>
+                <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+              </button>
+
+              <p class="text-[11.5px] text-inksoft leading-relaxed mt-4 text-center">Secure payment processing. Payment is handled securely by our payment provider.<br><a href="#" class="underline hover:no-underline">Terms of Service</a> &middot; <a href="#" class="underline hover:no-underline">Privacy Policy</a></p>
             </div>
-
-            <div id="formError" role="alert" class="hidden text-[12.5px] text-red-700 bg-red-50 border border-red-200 rounded-lg px-3.5 py-2.5 mb-4"></div>
-
-            <button type="submit" id="payBtn" class="w-full py-4 rounded-xl bg-ink text-cream text-[15px] font-semibold hover:bg-[#2a2d20] transition shadow-lg shadow-ink/20 disabled:opacity-60 disabled:cursor-not-allowed">
-              <span id="payBtnLabel">Pay Securely</span>
-            </button>
           </form>
 
           <!-- Contact-sales panel (custom plans) -->
-          <div id="contactSalesPanel" class="hidden text-center py-6">
-            <p class="text-inksoft text-[14px] leading-relaxed mb-6 max-w-[380px] mx-auto">This is a custom engagement — pricing is scoped with our team rather than charged at checkout.</p>
-            <button id="contactSalesBtn" class="w-full py-4 rounded-xl bg-ink text-cream text-[15px] font-semibold hover:bg-[#2a2d20] transition shadow-lg shadow-ink/20">Contact Sales</button>
+          <div id="contactSalesPanel" class="hidden">
+            <div class="flex items-baseline gap-2.5 mb-6">
+              <span class="font-mono text-[11px] text-sage">01</span>
+              <span class="font-mono uppercase tracking-[0.18em] text-[11px] text-inksoft">Custom Engagement</span>
+            </div>
+            <p class="text-inksoft text-[14px] leading-relaxed mb-8 max-w-[380px]">This is a custom engagement — pricing is scoped with our team rather than charged at checkout.</p>
+            <button id="contactSalesBtn" class="w-full h-[56px] bg-ink text-cream text-[14.5px] font-semibold tracking-wide hover:bg-[#2a2d20] transition-colors">Contact Sales</button>
           </div>
 
           <!-- Loading state -->
-          <div id="loadingState" class="hidden text-center py-12">
-            <div class="w-8 h-8 mx-auto mb-4 rounded-full border-2 border-sage border-t-transparent animate-spin"></div>
-            <p class="text-[13.5px] text-inksoft">Preparing secure checkout&hellip;</p>
+          <div id="loadingState" class="hidden py-16 text-center">
+            <div class="spinner mx-auto mb-5"></div>
+            <p class="font-mono uppercase tracking-[0.18em] text-[11px] text-inksoft">Preparing secure checkout</p>
           </div>
 
           <!-- "Not connected" state — shown instead of a fake success screen -->
-          <div id="notConnectedState" class="hidden text-center py-10">
-            <div class="w-12 h-12 rounded-full bg-cream2 flex items-center justify-center mx-auto mb-4">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="text-sage"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg>
-            </div>
-            <h4 class="font-serif text-[20px] font-medium text-forest900 mb-2">Payment processing is not connected yet.</h4>
-            <p class="text-sm text-inksoft leading-relaxed max-w-[380px] mx-auto">This checkout is architected for Stripe Checkout — it just needs a live backend endpoint to create the session. No charge has been made and no card details have been collected on this page.</p>
-            <button id="backToFormBtn" class="mt-5 px-8 py-3 rounded-full border border-black/10 text-ink text-sm font-semibold hover:bg-cream2 transition">Back to Form</button>
+          <div id="notConnectedState" class="hidden py-4">
+            <div class="font-mono uppercase tracking-[0.18em] text-[10.5px] text-inksoft mb-4">Checkout Not Connected</div>
+            <h3 class="font-serif text-[21px] font-medium mb-3">Payment processing is not connected yet.</h3>
+            <p class="text-inksoft text-[13.5px] leading-relaxed mb-7 max-w-[380px]">This checkout is architected for Stripe Checkout — it just needs a live backend endpoint to create the session. No charge has been made and no card details have been collected on this page.</p>
+            <button id="backToFormBtn" class="font-mono text-[11.5px] uppercase tracking-wide text-ink border-b border-ink pb-0.5">Back to Form</button>
           </div>
 
           <!-- Success state (only renders after backend verifies a real Stripe session) -->
-          <div id="paymentSuccessState" class="hidden text-center py-10">
-            <div class="text-5xl mb-3">&#9989;</div>
-            <h4 class="font-serif text-[22px] font-medium text-forest900">Payment Confirmed</h4>
-            <p class="text-sm text-inksoft mt-2">Thank you for choosing Error.404.<br>Your <span id="successPlanName"></span> purchase has been confirmed.</p>
-            <p class="text-[11.5px] text-inksoft mt-3">Reference: <span id="referenceId" class="font-mono"></span></p>
-            <a href="index.html" class="inline-block mt-5 px-8 py-3 rounded-full bg-ink text-cream text-sm font-semibold hover:bg-[#2a2d20] transition">Continue to Error.404</a>
+          <div id="paymentSuccessState" class="hidden py-4">
+            <div class="font-mono uppercase tracking-[0.18em] text-[10.5px] text-sage mb-4">Payment Confirmed</div>
+            <h3 class="font-serif text-[24px] font-medium mb-8 max-w-[380px]">Your <span id="successPlanName"></span> engagement has been confirmed.</h3>
+            <dl class="grid grid-cols-2 gap-y-4 gap-x-4 text-[13px] border-t border-black/10 pt-6 mb-9 max-w-[380px]">
+              <dt class="font-mono uppercase tracking-wide text-[10px] text-inksoft">Plan</dt><dd id="successPlanValue"></dd>
+              <dt class="font-mono uppercase tracking-wide text-[10px] text-inksoft">Amount</dt><dd id="successAmount"></dd>
+              <dt class="font-mono uppercase tracking-wide text-[10px] text-inksoft">Status</dt><dd>Paid</dd>
+              <dt class="font-mono uppercase tracking-wide text-[10px] text-inksoft">Reference</dt><dd id="referenceId" class="font-mono"></dd>
+            </dl>
+            <a href="index.html" class="inline-flex items-center gap-2 font-mono text-[11.5px] uppercase tracking-wide text-ink border-b border-ink pb-0.5 hover:gap-3 transition-all">Return to kibtoon ai services &rarr;</a>
           </div>
 
           <!-- Cancelled state (Stripe cancel_url return) -->
-          <div id="paymentCancelledState" class="hidden text-center py-10">
-            <h4 class="font-serif text-[20px] font-medium text-forest900 mb-2">Checkout cancelled.</h4>
-            <p class="text-sm text-inksoft leading-relaxed">No charge was made. You can pick up where you left off whenever you're ready.</p>
-            <button id="cancelledBackBtn" class="mt-5 px-8 py-3 rounded-full bg-ink text-cream text-sm font-semibold hover:bg-[#2a2d20] transition">Back to Form</button>
+          <div id="paymentCancelledState" class="hidden py-4">
+            <div class="font-mono uppercase tracking-[0.18em] text-[10.5px] text-inksoft mb-4">Checkout Cancelled</div>
+            <h3 class="font-serif text-[20px] font-medium mb-3">No charge was made.</h3>
+            <p class="text-inksoft text-[13.5px] leading-relaxed mb-7">You can pick up where you left off whenever you're ready.</p>
+            <button id="cancelledBackBtn" class="font-mono text-[11.5px] uppercase tracking-wide text-ink border-b border-ink pb-0.5">Back to Form</button>
           </div>
 
           <!-- Failure state -->
-          <div id="paymentFailureState" class="hidden text-center py-10">
-            <h4 class="font-serif text-[20px] font-medium text-forest900 mb-2">Payment not completed.</h4>
-            <p class="text-sm text-inksoft leading-relaxed" id="paymentFailureMessage">We couldn't complete your payment. Please check your details and try again.</p>
-            <button id="tryAgainBtn" class="mt-5 px-8 py-3 rounded-full bg-ink text-cream text-sm font-semibold hover:bg-[#2a2d20] transition">Try Again</button>
+          <div id="paymentFailureState" class="hidden py-4">
+            <div class="font-mono uppercase tracking-[0.18em] text-[10.5px] text-inksoft mb-4">Payment Not Completed</div>
+            <h3 class="font-serif text-[21px] font-medium mb-3">We couldn't complete this transaction.</h3>
+            <p class="text-inksoft text-[13.5px] leading-relaxed mb-7" id="paymentFailureMessage">Your payment method has not been confirmed.</p>
+            <div class="flex flex-wrap gap-4">
+              <button id="tryAgainBtn" class="font-mono text-[11.5px] uppercase tracking-wide text-ink border-b border-ink pb-0.5">Try Again</button>
+              <a href="payment.html" class="font-mono text-[11.5px] uppercase tracking-wide text-inksoft border-b border-inksoft/40 pb-0.5">Return to Plans</a>
+            </div>
           </div>
         </div>
       </div>
@@ -304,66 +275,22 @@
 
   <!-- ===== INVALID PLAN ===== -->
   <section id="planNotFound" class="hidden py-32">
-    <div class="max-w-[600px] mx-auto px-8 text-center">
-      <h2 class="font-serif text-[28px] font-medium mb-4">Plan not found</h2>
-      <p class="text-inksoft mb-8">The selected plan could not be found.</p>
-      <a href="payment.html" class="inline-flex items-center gap-2 px-5 py-[11px] rounded-full bg-ink text-cream text-[13.5px] font-semibold">&larr; Return to Plans</a>
+    <div class="max-w-[560px] mx-auto px-6 text-center">
+      <div class="font-mono uppercase tracking-[0.18em] text-[10.5px] text-inksoft mb-4">Plan Not Found</div>
+      <h2 class="font-serif text-[26px] font-medium mb-4">The selected plan could not be found.</h2>
+      <a href="payment.html" class="inline-flex items-center gap-2 font-mono text-[11.5px] uppercase tracking-wide text-ink border-b border-ink pb-0.5">&larr; Return to Plans</a>
     </div>
   </section>
 
 </main>
 
-
-<footer class="bg-forest950 text-white/85 pt-20">
-  <div class="max-w-[1180px] mx-auto px-8">
-    <div class="grid sm:grid-cols-2 md:grid-cols-[1.4fr_0.8fr_0.8fr_1fr] gap-10 pb-14 border-b border-white/[0.14]">
-      <div>
-        <a href="index.html#top" class="flex items-center gap-2.5 font-serif text-[19px] text-paper">
-          <span class="w-[30px] h-[30px] rounded-full flex items-center justify-center shadow-[inset_0_0_0_1px_rgba(255,255,255,0.15)]" style="background:radial-gradient(circle at 35% 30%, #4a5a3c, #1a260f 70%);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#F6F4EB" stroke-width="1.4" class="w-4 h-4"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l2.8 2.8M16.2 16.2 19 19M19 5l-2.8 2.8M7.8 16.2 5 19"/></svg>
-          </span>
-          Error.404
-        </a>
-        <p class="text-[13.5px] text-white/60 leading-relaxed my-4 max-w-[280px]">AI-powered construction intelligence for crews who build fast, safe, and sustainably. Engineered in New York, deployed on job sites nationwide.</p>
-        <div class="flex gap-2.5">
-          <a href="#" class="w-[34px] h-[34px] rounded-full border border-white/[0.14] flex items-center justify-center hover:bg-white/[0.08] transition"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-paper"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7l-5.5-7.2L4.4 22H1.3l8.2-9.3L1 2h7.2l5 6.6L18.9 2Zm-1.2 18h1.7L7.3 4H5.5l12.2 16Z"/></svg></a>
-          <a href="#" class="w-[34px] h-[34px] rounded-full border border-white/[0.14] flex items-center justify-center hover:bg-white/[0.08] transition"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-paper"><path d="M19 3A2 2 0 0 1 21 5v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14ZM8.5 17.5v-7H6v7h2.5Zm-1.25-8a1.45 1.45 0 1 0 0-2.9 1.45 1.45 0 0 0 0 2.9ZM18 17.5v-3.9c0-2.1-1.13-3.08-2.63-3.08-1.21 0-1.75.66-2.05 1.13v-.97h-2.5c.03.66 0 7 0 7h2.5v-3.9c0-.21.02-.42.08-.57.17-.42.55-.86 1.2-.86.85 0 1.19.65 1.19 1.6v3.73H18Z"/></svg></a>
-          <a href="#" class="w-[34px] h-[34px] rounded-full border border-white/[0.14] flex items-center justify-center hover:bg-white/[0.08] transition"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-paper"><path d="M12 2.2c2.7 0 3 0 4.1.06 1.1.05 1.8.22 2.4.46.6.24 1.1.56 1.65 1.1.5.5.85 1.03 1.1 1.65.24.6.4 1.3.46 2.4.05 1.1.06 1.4.06 4.1s0 3-.06 4.1c-.05 1.1-.22 1.8-.46 2.4a4.4 4.4 0 0 1-1.1 1.65c-.5.5-1.03.85-1.65 1.1-.6.24-1.3.4-2.4.46-1.1.05-1.4.06-4.1.06s-3 0-4.1-.06c-1.1-.05-1.8-.22-2.4-.46a4.4 4.4 0 0 1-1.65-1.1 4.4 4.4 0 0 1-1.1-1.65c-.24-.6-.4-1.3-.46-2.4C2.2 15 2.2 14.7 2.2 12s0-3 .06-4.1c.05-1.1.22-1.8.46-2.4.24-.62.56-1.15 1.1-1.65.5-.5 1.03-.86 1.65-1.1.6-.24 1.3-.4 2.4-.46C8.98 2.2 9.28 2.2 12 2.2Zm0 1.8c-2.65 0-2.96 0-4 .05-.97.05-1.5.2-1.85.34-.46.18-.79.4-1.14.75-.35.35-.57.68-.75 1.14-.14.35-.3.88-.34 1.85-.05 1.04-.05 1.35-.05 4s0 2.96.05 4c.05.97.2 1.5.34 1.85.18.46.4.79.75 1.14.35.35.68.57 1.14.75.35.14.88.3 1.85.34 1.04.05 1.35.05 4 .05s2.96 0 4-.05c.97-.05 1.5-.2 1.85-.34.46-.18.79-.4 1.14-.75.35-.35.57-.68.75-1.14.14-.35.3-.88.34-1.85.05-1.04.05-1.35.05-4s0-2.96-.05-4c-.05-.97-.2-1.5-.34-1.85a3.1 3.1 0 0 0-.75-1.14 3.1 3.1 0 0 0-1.14-.75c-.35-.14-.88-.3-1.85-.34-1.04-.05-1.35-.05-4-.05Zm0 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm0 1.8a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Zm5.7-2a1.05 1.05 0 1 1-2.1 0 1.05 1.05 0 0 1 2.1 0Z"/></svg></a>
-        </div>
-      </div>
-      <div>
-        <h5 class="font-mono uppercase tracking-widest text-[11px] text-white/55 mb-4">Services</h5>
-        <a href="index.html#pricing" class="block text-[13.5px] text-white/82 py-1.5 hover:text-paper transition">Site Diagnostic</a>
-        <a href="index.html#pricing" class="block text-[13.5px] text-white/82 py-1.5 hover:text-paper transition">Full Build Intelligence</a>
-        <a href="index.html#pricing" class="block text-[13.5px] text-white/82 py-1.5 hover:text-paper transition">Portfolio Command</a>
-        <a href="index.html#gallery" class="block text-[13.5px] text-white/82 py-1.5 hover:text-paper transition">Project Gallery</a>
-      </div>
-      <div>
-        <h5 class="font-mono uppercase tracking-widest text-[11px] text-white/55 mb-4">Company</h5>
-        <a href="index.html#capabilities" class="block text-[13.5px] text-white/82 py-1.5 hover:text-paper transition">AI Capabilities</a>
-        <a href="index.html#method" class="block text-[13.5px] text-white/82 py-1.5 hover:text-paper transition">About Error.404</a>
-        <a href="index.html#leaders" class="block text-[13.5px] text-white/82 py-1.5 hover:text-paper transition">Clients</a>
-        <a href="index.html#founders" class="block text-[13.5px] text-white/82 py-1.5 hover:text-paper transition">Founders</a>
-        <a href="index.html#briefings" class="block text-[13.5px] text-white/82 py-1.5 hover:text-paper transition">Field Notes</a>
-        <a href="#" class="block text-[13.5px] text-white/82 py-1.5 hover:text-paper transition">Careers <span class="text-[9px] font-mono bg-sage text-forest950 px-1.5 py-0.5 rounded-full ml-1.5 align-middle">HIRING</span></a>
-        <a href="index.html#contact" class="block text-[13.5px] text-white/82 py-1.5 hover:text-paper transition">Contact</a>
-      </div>
-      <div>
-        <h5 class="font-mono uppercase tracking-widest text-[11px] text-white/55 mb-4">Subscribe</h5>
-        <p class="text-[13px] text-white/60 leading-relaxed mb-3.5">Field notes on AI, safety, and sustainable building — quarterly.</p>
-        <div class="flex gap-2">
-          <input type="email" placeholder="Enter your email" class="flex-1 bg-white/[0.06] border border-white/[0.14] rounded-lg px-3.5 py-2.5 text-paper text-[13px] outline-none placeholder:text-white/40">
-          <button class="w-[42px] flex-shrink-0 rounded-lg bg-paper flex items-center justify-center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#181A13" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
-        </div>
-      </div>
-    </div>
-    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 py-6 text-xs text-white/50">
-      <span>&copy; 2026 Error.404 Systems Inc. All rights reserved.</span>
-      <div class="flex gap-5">
-        <a href="#" class="hover:text-white/80 transition">Privacy Policy</a>
-        <a href="#" class="hover:text-white/80 transition">Terms of Service</a>
-        <a href="#" class="hover:text-white/80 transition">Security</a>
-      </div>
+<!-- ================= MINIMAL FOOTER ================= -->
+<footer class="border-t border-black/[0.08] py-8">
+  <div class="max-w-[1300px] mx-auto px-6 md:px-10 flex flex-col sm:flex-row justify-between items-center gap-3 text-[11.5px] text-inksoft">
+    <span>&copy; 2026 kibtoon ai services Systems Inc.</span>
+    <div class="flex gap-5">
+      <a href="#" class="hover:text-ink transition">Terms of Service</a>
+      <a href="#" class="hover:text-ink transition">Privacy Policy</a>
     </div>
   </div>
 </footer>
@@ -389,7 +316,7 @@
               <span class="w-10 h-10 rounded-full flex items-center justify-center shadow-[inset_0_0_0_1px_rgba(255,255,255,0.2)]" style="background:radial-gradient(circle at 35% 30%, #5b6a49, #1a260f 75%);">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#F6F4EB" stroke-width="1.4" class="w-5 h-5"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l2.8 2.8M16.2 16.2 19 19M19 5l-2.8 2.8M7.8 16.2 5 19"/></svg>
               </span>
-              <span class="font-serif text-[22px] tracking-tight">Error.404</span>
+              <span class="font-serif text-[22px] tracking-tight">kibtoon ai services</span>
             </div>
             <h3 class="font-serif text-[28px] md:text-[34px] font-medium leading-tight mb-4">Book a Consultation</h3>
             <p class="text-white/70 text-[14px] leading-relaxed">Let's discuss how AI-powered construction intelligence can transform your next build. One of our experts will reach out to you.</p>
@@ -494,235 +421,6 @@
   </div>
 
 
-<!-- ================= AI CHAT WIDGET (draggable) ================= -->
-<div class="ai-chat fixed right-7 bottom-7 z-[200] select-none" id="aiChat">
-  <div class="ai-chat-window absolute right-0 bottom-[74px] w-[340px] h-[460px] bg-paper border border-black/[0.07] rounded-[18px] shadow-2xl flex flex-col overflow-hidden" id="aiChatWindow">
-    <div class="bg-forest900 text-paper px-4 py-3.5 flex items-center justify-between cursor-grab flex-shrink-0" id="aiChatHeader" style="touch-action:none;">
-      <div class="flex items-center gap-2.5 text-[13.5px] font-semibold">
-        <span class="w-[22px] h-[22px] rounded-full flex-shrink-0 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.2)]" style="background:radial-gradient(circle at 35% 30%,#5b6a49,#1a260f 75%);"></span>
-        Error.404 Site Assistant
-      </div>
-      <button class="w-[26px] h-[26px] rounded-full border border-white/25 flex items-center justify-center hover:bg-white/10 transition" id="aiChatClose" aria-label="Close chat">&times;</button>
-    </div>
-    <div class="flex-1 overflow-y-auto p-4 flex flex-col gap-3" id="aiChatBody">
-      <div class="msg-in max-w-[82%] text-[13.5px] leading-relaxed px-3.5 py-2.5 rounded-2xl rounded-bl-sm bg-cream2 self-start">Hi, I'm the Error.404 assistant. Ask me about services, pricing, or how a build engagement works — or drag me anywhere on the page.</div>
-    </div>
-    <div class="flex flex-wrap gap-1.5 px-4 pb-3 flex-shrink-0" id="aiChatQuick">
-      <button type="button" data-q="pricing" class="text-[11.5px] border border-black/10 rounded-full px-2.5 py-1.5 bg-cream2 text-inksoft hover:bg-paper hover:border-sage transition">Pricing</button>
-      <button type="button" data-q="services" class="text-[11.5px] border border-black/10 rounded-full px-2.5 py-1.5 bg-cream2 text-inksoft hover:bg-paper hover:border-sage transition">Services</button>
-      <button type="button" data-q="contact" class="text-[11.5px] border border-black/10 rounded-full px-2.5 py-1.5 bg-cream2 text-inksoft hover:bg-paper hover:border-sage transition">Talk to a human</button>
-    </div>
-    <form class="flex gap-2 p-3 border-t border-black/[0.07] flex-shrink-0" id="aiChatForm">
-      <input type="text" id="aiChatInput" placeholder="Type a message..." autocomplete="off" class="flex-1 border border-black/10 bg-cream2 rounded-lg px-3.5 py-2.5 text-[13px] outline-none focus:border-sage focus:bg-paper transition">
-      <button type="submit" aria-label="Send" class="w-[38px] flex-shrink-0 rounded-lg bg-ink text-cream flex items-center justify-center hover:bg-[#2a2d20] transition"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg></button>
-    </form>
-  </div>
-  <button class="w-[58px] h-[58px] rounded-full flex items-center justify-center border-none relative shadow-[0_16px_32px_-12px_rgba(14,20,8,0.55),inset_0_0_0_1px_rgba(255,255,255,0.14)] hover:scale-105 transition-transform" id="aiChatBubble" aria-label="Open chat" style="background:radial-gradient(circle at 32% 28%, #47593a, #0E160A 75%); touch-action:none; cursor:grab;">
-    <span class="ping-ring absolute top-0.5 right-0.5 w-[11px] h-[11px] rounded-full bg-sagelight shadow-[0_0_0_2px_#0E160A]"></span>
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F6F4EB" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>
-  </button>
-</div>
-
-
-
-<script>
-  // header scroll state
-  const header = document.getElementById('site-header');
-  const logoLink = document.getElementById('logoLink');
-  const navLinks = document.querySelectorAll('.nav-link');
-  const navToggleBtn = document.getElementById('navToggle');
-  const navCta = document.getElementById('navCta');
-  function setScrolled(on){
-    header.classList.toggle('is-scrolled', on);
-    header.classList.toggle('bg-cream/85', on);
-    header.classList.toggle('backdrop-blur-md', on);
-    header.classList.toggle('border-black/[0.07]', on);
-    header.classList.toggle('py-3.5', on);
-    header.classList.toggle('py-5', !on);
-    logoLink.classList.toggle('text-ink', on);
-    logoLink.classList.toggle('text-paper', !on);
-    navLinks.forEach(a => { a.classList.toggle('text-ink', on); a.classList.toggle('text-paper', !on); });
-    navToggleBtn.classList.toggle('text-ink', on);
-    navToggleBtn.classList.toggle('text-paper', !on);
-    navToggleBtn.classList.toggle('border-black/15', on);
-    navToggleBtn.classList.toggle('border-white/35', !on);
-    navCta.classList.toggle('bg-ink', on);
-    navCta.classList.toggle('text-cream', on);
-    navCta.classList.toggle('border-ink', on);
-    navCta.classList.toggle('bg-cream', !on);
-    navCta.classList.toggle('text-ink', !on);
-    navCta.classList.toggle('border-cream', !on);
-  }
-  window.addEventListener('scroll', () => setScrolled(window.scrollY > 40));
-
-  // mobile menu toggle
-  const mobileMenu = document.getElementById('mobileMenu');
-  navToggleBtn.addEventListener('click', () => {
-    const isOpen = mobileMenu.classList.toggle('opacity-100');
-    mobileMenu.classList.toggle('opacity-0', !isOpen);
-    mobileMenu.classList.toggle('translate-y-0', isOpen);
-    mobileMenu.classList.toggle('-translate-y-4', !isOpen);
-    mobileMenu.classList.toggle('pointer-events-none', !isOpen);
-    navToggleBtn.setAttribute('aria-expanded', isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-    navToggleBtn.children[0].style.transform = isOpen ? 'translateY(6.4px) rotate(45deg)' : '';
-    navToggleBtn.children[1].style.opacity = isOpen ? '0' : '1';
-    navToggleBtn.children[2].style.transform = isOpen ? 'translateY(-6.4px) rotate(-45deg)' : '';
-  });
-  mobileMenu.querySelectorAll('a:not(#mobileNavCta)').forEach(a => a.addEventListener('click', () => navToggleBtn.click()));
-
-  // reveal on scroll
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, {threshold:0.12});
-  revealEls.forEach(el => io.observe(el));
-
-</script>
-
-<script>
-  // ---------- AI chat widget: drag anywhere + open/close + canned replies ----------
-  (function(){
-    const chat = document.getElementById('aiChat');
-    const bubble = document.getElementById('aiChatBubble');
-    const win = document.getElementById('aiChatWindow');
-    const chatHeader = document.getElementById('aiChatHeader');
-    const closeBtn = document.getElementById('aiChatClose');
-    const body = document.getElementById('aiChatBody');
-    const form = document.getElementById('aiChatForm');
-    const input = document.getElementById('aiChatInput');
-    const quick = document.getElementById('aiChatQuick');
-
-    function pxPosition(){
-      const r = chat.getBoundingClientRect();
-      chat.style.left = r.left + 'px';
-      chat.style.top = r.top + 'px';
-      chat.style.right = 'auto';
-      chat.style.bottom = 'auto';
-    }
-    let dragging = false, moved = false, startX = 0, startY = 0, originLeft = 0, originTop = 0;
-    function dragStart(handleEl){
-      return function(e){
-        pxPosition();
-        dragging = true; moved = false;
-        chat.classList.add('dragging');
-        const point = e.touches ? e.touches[0] : e;
-        startX = point.clientX; startY = point.clientY;
-        originLeft = parseFloat(chat.style.left);
-        originTop = parseFloat(chat.style.top);
-        document.addEventListener('mousemove', dragMove);
-        document.addEventListener('touchmove', dragMove, {passive:false});
-        document.addEventListener('mouseup', dragEnd);
-        document.addEventListener('touchend', dragEnd);
-      };
-    }
-    function dragMove(e){
-      if(!dragging) return;
-      if(e.cancelable) e.preventDefault();
-      const point = e.touches ? e.touches[0] : e;
-      const dx = point.clientX - startX;
-      const dy = point.clientY - startY;
-      if(Math.abs(dx) > 4 || Math.abs(dy) > 4) moved = true;
-      chat.style.left = (originLeft + dx) + 'px';
-      chat.style.top = (originTop + dy) + 'px';
-      clampEl(chat.classList.contains('open') ? win : bubble);
-    }
-    function clampEl(refEl){
-      const r = refEl.getBoundingClientRect();
-      const chatRect = chat.getBoundingClientRect();
-      const offsetLeft = r.left - chatRect.left;
-      const offsetTop = r.top - chatRect.top;
-      let left = parseFloat(chat.style.left);
-      let top = parseFloat(chat.style.top);
-      const minLeft = 8 - offsetLeft, minTop = 8 - offsetTop;
-      const maxLeft = window.innerWidth - r.width - 8 - offsetLeft;
-      const maxTop = window.innerHeight - r.height - 8 - offsetTop;
-      left = Math.min(Math.max(minLeft, left), Math.max(minLeft, maxLeft));
-      top = Math.min(Math.max(minTop, top), Math.max(minTop, maxTop));
-      chat.style.left = left + 'px';
-      chat.style.top = top + 'px';
-    }
-    function dragEnd(){
-      dragging = false;
-      chat.classList.remove('dragging');
-      document.removeEventListener('mousemove', dragMove);
-      document.removeEventListener('touchmove', dragMove);
-      document.removeEventListener('mouseup', dragEnd);
-      document.removeEventListener('touchend', dragEnd);
-    }
-    bubble.addEventListener('mousedown', dragStart(bubble));
-    bubble.addEventListener('touchstart', dragStart(bubble), {passive:true});
-    chatHeader.addEventListener('mousedown', dragStart(chatHeader));
-    chatHeader.addEventListener('touchstart', dragStart(chatHeader), {passive:true});
-
-    bubble.addEventListener('click', () => {
-      if(moved){ moved = false; return; }
-      pxPosition();
-      const isOpen = chat.classList.toggle('open');
-      if(isOpen){ setTimeout(() => clampEl(win), 10); input.focus(); }
-      else { setTimeout(() => clampEl(bubble), 10); }
-    });
-    closeBtn.addEventListener('click', () => {
-      chat.classList.remove('open');
-      setTimeout(() => clampEl(bubble), 10);
-    });
-    window.addEventListener('resize', () => {
-      if(!chat.style.left) return;
-      clampEl(chat.classList.contains('open') ? win : bubble);
-    });
-
-    const replies = {
-      pricing: "We run three engagement tiers: Site Diagnostic ($8,500/audit), Full Build Intelligence ($24,000/month), and Portfolio Command (custom). Want me to scroll you to pricing?",
-      services: "We handle site diagnostics, predictive scheduling, computer-vision safety monitoring, and sustainable material modeling. The 'Process' section above walks through our four-stage method.",
-      contact: "Happy to connect you with the team — the contact form below takes about a minute, and someone will follow up within one business day.",
-      default: [
-        "Good question — a member of the team can go deeper on that. Want me to pull up the contact form?",
-        "That's a bit outside my quick-reply script, but I can point you to the right section of the site if you tell me what you're trying to do.",
-        "I can help with pricing, services, or getting you to a real person — which would help most right now?"
-      ]
-    };
-    function addMsg(text, who){
-      const el = document.createElement('div');
-      el.className = 'msg-in max-w-[82%] text-[13.5px] leading-relaxed px-3.5 py-2.5 rounded-2xl ' +
-        (who === 'bot' ? 'bg-cream2 rounded-bl-sm self-start text-ink' : 'bg-forest900 text-paper rounded-br-sm self-end');
-      el.textContent = text;
-      body.appendChild(el);
-      body.scrollTop = body.scrollHeight;
-    }
-    function botReply(key){
-      const typing = document.createElement('div');
-      typing.className = 'flex gap-1 items-center px-3.5 py-3 rounded-2xl rounded-bl-sm bg-cream2 self-start';
-      typing.innerHTML = '<span class="typing-dot w-[5px] h-[5px] rounded-full bg-inksoft opacity-50"></span><span class="typing-dot w-[5px] h-[5px] rounded-full bg-inksoft opacity-50"></span><span class="typing-dot w-[5px] h-[5px] rounded-full bg-inksoft opacity-50"></span>';
-      body.appendChild(typing);
-      body.scrollTop = body.scrollHeight;
-      setTimeout(() => {
-        typing.remove();
-        addMsg(replies[key] || replies.default[Math.floor(Math.random()*replies.default.length)], 'bot');
-      }, 650 + Math.random()*400);
-    }
-    quick.addEventListener('click', (e) => {
-      const btn = e.target.closest('button[data-q]');
-      if(!btn) return;
-      addMsg(btn.textContent, 'user');
-      botReply(btn.dataset.q);
-    });
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const val = input.value.trim();
-      if(!val) return;
-      addMsg(val, 'user');
-      input.value = '';
-      const lower = val.toLowerCase();
-      let key = null;
-      if(lower.includes('price') || lower.includes('cost') || lower.includes('plan')) key = 'pricing';
-      else if(lower.includes('service') || lower.includes('do you') || lower.includes('offer')) key = 'services';
-      else if(lower.includes('contact') || lower.includes('talk') || lower.includes('human') || lower.includes('call')) key = 'contact';
-      botReply(key);
-    });
-  })();
-
-</script>
-
 <script>
 // ============ কনসালটেশন ওভারলে ওপেন/ক্লোজ ============
 const consultOverlay = document.getElementById('consultationOverlay');
@@ -750,24 +448,6 @@ document.getElementById('closeConsultSuccess').addEventListener('click', closeCo
 consultOverlay.addEventListener('click', function(e) {
   if (e.target === this) closeConsultOverlay();
 });
-
-// ============ Book Consultation বাটন (হেডার + মোবাইল মেনু) — এখানেই মূল বাগ ছিল ============
-// আগে onclick অ্যাট্রিবিউটটি ভুলবশত class="..." স্ট্রিং-এর ভেতরে লেখা ছিল,
-// তাই ব্রাউজার সেটাকে বৈধ ইভেন্ট হ্যান্ডলার হিসেবে ধরত না এবং বাটনে ক্লিক করলে
-// শুধু href="#" অনুযায়ী পেজের উপরে চলে যেত, ওভারলে খুলত না।
-document.getElementById('navCta').addEventListener('click', function(e) {
-  e.preventDefault();
-  openConsultOverlay();
-});
-
-const mobileNavCta = document.getElementById('mobileNavCta');
-if (mobileNavCta) {
-  mobileNavCta.addEventListener('click', function(e) {
-    e.preventDefault();
-    navToggleBtn.click(); // মোবাইল মেনু বন্ধ করা
-    openConsultOverlay();
-  });
-}
 
 // ============ কনসালটেশন ফর্ম সাবমিট ============
 document.getElementById('consultForm').addEventListener('submit', function(e) {
@@ -814,6 +494,7 @@ document.getElementById('consultForm').addEventListener('submit', function(e) {
       id: "site-diagnostic",
       name: "Site Diagnostic",
       category: "Audit & Stabilization",
+      description: "A focused audit to stabilize a site fast, before scaling monitoring and scheduling as the build grows.",
       price: 8500,
       currency: "USD",
       billing: "audit",
@@ -824,12 +505,19 @@ document.getElementById('consultForm').addEventListener('submit', function(e) {
         "Safety baseline audit",
         "Schedule feasibility review",
         "Cancel anytime"
+      ],
+      spec: [
+        { label: "Service", value: "Site Diagnostic" },
+        { label: "Delivery", value: "72 hours" },
+        { label: "Engagement", value: "Single audit" },
+        { label: "Payment", value: "Secure online checkout" }
       ]
     },
     "full-build": {
       id: "full-build",
       name: "Full Build Intelligence",
       category: "Full Build Intelligence",
+      description: "Dedicated AI operations across the full build — real-time monitoring, predictive scheduling, and safety AI in one engagement.",
       price: 24000,
       currency: "USD",
       billing: "month",
@@ -841,12 +529,19 @@ document.getElementById('consultForm').addEventListener('submit', function(e) {
         "Predictive scheduling",
         "Computer-vision safety AI",
         "Unlimited site revisions"
+      ],
+      spec: [
+        { label: "Service", value: "Full Build Intelligence" },
+        { label: "Delivery", value: "Ongoing" },
+        { label: "Engagement", value: "Monthly retainer" },
+        { label: "Payment", value: "Secure online checkout" }
       ]
     },
     "portfolio-command": {
       id: "portfolio-command",
       name: "Portfolio Command",
       category: "Multi-Site Portfolio",
+      description: "Multiple dedicated pods and custom SLAs for portfolios running several sites at once.",
       price: null,
       currency: "USD",
       billing: "custom",
@@ -858,6 +553,12 @@ document.getElementById('consultForm').addEventListener('submit', function(e) {
         "White-glove onboarding",
         "24/7 priority support",
         "Vendor governance"
+      ],
+      spec: [
+        { label: "Service", value: "Portfolio Command" },
+        { label: "Delivery", value: "Custom" },
+        { label: "Engagement", value: "Multi-site contract" },
+        { label: "Payment", value: "Contact sales" }
       ]
     }
   };
@@ -871,45 +572,36 @@ document.getElementById('consultForm').addEventListener('submit', function(e) {
     return '$' + plan.price.toLocaleString();
   }
 
-  function planCard(plan){
-    const priceLabel = plan.price === null ? 'contact us' : ('/ ' + plan.billing);
-    return `<a href="payment.html?plan=${plan.id}" class="bg-paper border border-black/[0.07] rounded-[18px] p-8 flex flex-col hover:-translate-y-1.5 transition-all block">
-      <div class="font-mono text-[10.5px] tracking-wide text-sage mb-2.5">${plan.category.toUpperCase()}</div>
-      <h3 class="text-[21px] font-medium mb-6">${plan.name}</h3>
-      <ul class="flex flex-col gap-2.5 mb-7 flex-grow text-[13.5px]">
-        ${plan.features.map(f => `<li class="flex gap-2.5 items-start"><svg viewBox="0 0 24 24" class="w-[15px] h-[15px] mt-0.5 flex-shrink-0 stroke-sage fill-none" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>${f}</li>`).join('')}
-      </ul>
-      <div class="flex items-baseline gap-1.5 pt-5 border-t border-black/10 mb-5">
-        <span class="font-serif text-[32px] font-medium">${formatPrice(plan)}</span><span class="text-[12.5px] text-inksoft">${priceLabel}</span>
+  function planRow(plan){
+    const priceLabel = plan.price === null ? 'Contact us' : (formatPrice(plan) + ' / ' + plan.billing);
+    return `<a href="payment.html?plan=${plan.id}" class="plan-row group flex items-center justify-between gap-6 py-8 px-2">
+      <div>
+        <div class="font-mono uppercase tracking-[0.18em] text-[10.5px] text-sage mb-2">${plan.category}</div>
+        <div class="font-serif text-[22px] sm:text-[26px] font-medium">${plan.name}</div>
       </div>
-      <span class="w-full text-center py-3.5 rounded-full text-[13.5px] font-semibold bg-ink text-cream">${plan.type === 'contact' ? 'Contact Sales' : 'Select Plan'}</span>
+      <div class="flex items-center gap-6 sm:gap-10 flex-shrink-0">
+        <span class="font-serif text-[18px] sm:text-[22px] text-right">${priceLabel}</span>
+        <span class="font-mono text-[11px] uppercase tracking-wide text-ink inline-flex items-center gap-1.5">
+          ${plan.type === 'contact' ? 'Contact' : 'Select'}
+          <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+        </span>
+      </div>
     </a>`;
   }
 
   function renderPlanChooser(){
     document.getElementById('planChooser').classList.remove('hidden');
-    document.title = 'Secure Checkout | Error.404';
-    document.getElementById('planChooserGrid').innerHTML = Object.values(plans).map(planCard).join('');
+    document.title = 'Secure Checkout | kibtoon ai services';
+    document.getElementById('planChooserList').innerHTML = Object.values(plans).map(planRow).join('');
     revealAndFade();
   }
 
   // ---------------------------------------------------------------------
   // PAYMENT INTEGRATION — Stripe Checkout Session (redirect) pattern.
-  //
-  // This page deliberately never collects a raw card number, expiry, or
-  // CVV. Instead it POSTs the order details (plan + customer info) to a
-  // backend endpoint that would create a Stripe Checkout Session using
-  // Stripe's SECRET key (server-side only, never in this file) and returns
-  // a hosted checkout URL. The browser then redirects there; Stripe's own
-  // page collects the card. This keeps raw card data off Error.404's
-  // infrastructure entirely and avoids PCI scope on our side.
-  //
-  // No backend exists in this project yet, so the fetch below will fail
-  // (network/404) — that failure is handled honestly via notConnectedState
-  // rather than faking success. See payment-server-example.js (shipped
-  // alongside this file) for the exact backend endpoints this expects:
-  //   POST /api/create-checkout-session  -> { url: "https://checkout.stripe.com/..." }
-  //   GET  /api/verify-session?session_id=...  -> { paid: true, reference, amount, planId }
+  // Unchanged from the previous version: no raw card fields are collected
+  // on this page. See payment-server-example.js for the backend this
+  // expects. No backend exists yet, so this honestly reports "not
+  // connected" rather than faking success.
   // ---------------------------------------------------------------------
 
   async function createCheckoutSession(planId, customer){
@@ -928,7 +620,6 @@ document.getElementById('consultForm').addEventListener('submit', function(e) {
       }
       return { status: 'redirect', url: data.url };
     } catch (err) {
-      // No backend endpoint exists yet in this static deployment.
       return { status: 'not_connected' };
     }
   }
@@ -954,23 +645,28 @@ document.getElementById('consultForm').addEventListener('submit', function(e) {
 
   function renderPlanCheckout(plan){
     document.getElementById('planCheckout').classList.remove('hidden');
-    document.title = plan.name + ' Checkout | Error.404';
+    document.title = plan.name + ' Checkout | kibtoon ai services';
     const metaDesc = document.querySelector('meta[name="description"]');
-    if(metaDesc) metaDesc.setAttribute('content', 'Secure checkout for the ' + plan.name + ' plan — Error.404.');
+    if(metaDesc) metaDesc.setAttribute('content', 'Secure checkout for the ' + plan.name + ' plan — kibtoon ai services.');
 
     const priceLabel = formatPrice(plan) + (plan.price !== null ? ' / ' + plan.billing : '');
     document.getElementById('planName').textContent = plan.name;
     document.getElementById('planPrice').textContent = priceLabel;
-    document.getElementById('planSummaryCategory').textContent = plan.category.toUpperCase();
+
+    document.getElementById('planSummaryCategory').textContent = plan.category;
     document.getElementById('planSummaryName').textContent = plan.name;
-    document.getElementById('planSummaryPrice').textContent = priceLabel;
+    document.getElementById('planSummaryDescription').textContent = plan.description;
+    document.getElementById('planSummaryPriceBig').textContent = formatPrice(plan);
+    document.getElementById('planSummaryPriceUnit').textContent = plan.price !== null ? (plan.currency + ' / ' + plan.billing.toUpperCase()) : 'CONTACT US';
     document.getElementById('planSummaryFeatures').innerHTML = plan.features.map(f =>
-      `<li class="flex gap-2 items-start text-[13px] text-white/75"><span class="text-sagelight mt-0.5">&#10003;</span>${f}</li>`
+      `<li class="flex gap-2.5 items-start text-[13.5px] text-inksoft"><span class="text-sage mt-0.5">&#10003;</span>${f}</li>`
+    ).join('');
+    document.getElementById('planSpecSheet').innerHTML = plan.spec.map(s =>
+      `<dt class="font-mono uppercase tracking-wide text-[10px] text-inksoft">${s.label}</dt><dd class="text-ink">${s.value}</dd>`
     ).join('');
 
     if(plan.type === 'contact'){
       showPanel('contactSalesPanel');
-      document.getElementById('payBtnLabel').textContent = 'Pay Securely';
       document.getElementById('contactSalesBtn').addEventListener('click', function(){
         openConsultOverlay();
       });
@@ -978,12 +674,12 @@ document.getElementById('consultForm').addEventListener('submit', function(e) {
       return;
     }
 
-    document.getElementById('payBtnLabel').textContent = 'Pay ' + formatPrice(plan) + ' Securely';
+    document.getElementById('payBtnLabel').textContent = 'Confirm & Pay ' + formatPrice(plan);
+    document.getElementById('summaryPlanLabel').textContent = plan.name;
+    document.getElementById('summaryPlanAmount').textContent = formatPrice(plan);
+    document.getElementById('summarySubtotal').textContent = formatPrice(plan);
+    document.getElementById('summaryTotal').textContent = formatPrice(plan);
 
-    // If the browser has just returned from Stripe (success_url/cancel_url),
-    // handle that before showing the form. A bare "status=success" query
-    // flag is never trusted on its own — the session is verified with the
-    // backend first, per Part 23.
     const params = new URLSearchParams(window.location.search);
     const sessionId = params.get('session_id');
     const returnStatus = params.get('status');
@@ -1000,6 +696,8 @@ document.getElementById('consultForm').addEventListener('submit', function(e) {
       verifyCheckoutSession(sessionId).then(result => {
         if(result.status === 'paid'){
           document.getElementById('successPlanName').textContent = plan.name;
+          document.getElementById('successPlanValue').textContent = plan.name;
+          document.getElementById('successAmount').textContent = formatPrice(plan);
           document.getElementById('referenceId').textContent = result.reference || sessionId;
           showPanel('paymentSuccessState');
         } else if(result.status === 'not_connected'){
@@ -1021,7 +719,6 @@ document.getElementById('consultForm').addEventListener('submit', function(e) {
   function wireCheckoutForm(plan){
     const checkoutForm = document.getElementById('checkoutForm');
     const payBtn = document.getElementById('payBtn');
-    const payBtnLabel = document.getElementById('payBtnLabel');
 
     checkoutForm.addEventListener('submit', async function(e){
       e.preventDefault();
@@ -1052,8 +749,6 @@ document.getElementById('consultForm').addEventListener('submit', function(e) {
         return;
       }
 
-      // customer info is only ever held in memory here and sent to the
-      // session-creation endpoint — never logged, never stored client-side.
       const customer = {
         name: document.getElementById('custName').value.trim(),
         email,
@@ -1086,14 +781,6 @@ document.getElementById('consultForm').addEventListener('submit', function(e) {
   }
 
   function revealAndFade(){
-    const main = document.getElementById('paymentMain');
-    main.style.opacity = '0';
-    main.style.transform = 'translateY(12px)';
-    requestAnimationFrame(() => {
-      main.style.transition = 'opacity .5s ease, transform .5s cubic-bezier(.2,.7,.2,1)';
-      main.style.opacity = '1';
-      main.style.transform = 'translateY(0)';
-    });
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
   }
 
@@ -1107,7 +794,7 @@ document.getElementById('consultForm').addEventListener('submit', function(e) {
     const plan = getPlanById(planId);
     if(!plan){
       document.getElementById('planNotFound').classList.remove('hidden');
-      document.title = 'Plan Not Found | Error.404';
+      document.title = 'Plan Not Found | kibtoon ai services';
       return;
     }
     renderPlanCheckout(plan);
