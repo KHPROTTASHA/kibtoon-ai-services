@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Error.404 — AI-Powered Construction Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          cream:   '#F6F4EB',
+          cream2:  '#EFEBDF',
+          paper:   '#FBFAF5',
+          ink:     '#181A13',
+          inksoft: '#4B4E3F',
+          forest950:'#0E160A',
+          forest900:'#152410',
+          forest800:'#1C3016',
+          sage:    '#87906B',
+          sagelight:'#B9C09E',
+        },
+        fontFamily: {
+          serif: ['Fraunces', 'serif'],
+          sans:  ['Inter', 'sans-serif'],
+          mono:  ['"JetBrains Mono"', 'monospace'],
+        },
+      }
+    }
+  }
+</script>
+<style>
+  html{scroll-behavior:smooth;}
+  body{overflow-x:hidden;}
+  .reveal{opacity:0; transform:translateY(22px); transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1);}
+  .reveal.in{opacity:1; transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none; transition:none;} html{scroll-behavior:auto;} }
+
+  .hero-bg{ background-image:url('GREEN.jpg'); background-size:cover; background-position:center 35%; }
+  .grain{ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+  .panel-bg{ background-image:url('panel-bg.jpg'); background-size:cover; background-position:center; }
+
+  .scroll-line{position:relative; overflow:hidden;}
+  .scroll-line::after{content:"";position:absolute;top:-100%;left:0;width:100%;height:100%;background:#FBFAF5;animation:scrolldrop 2.2s ease-in-out infinite;}
+  @keyframes scrolldrop{0%{top:-100%}60%{top:100%}100%{top:100%}}
+
+  .ping-ring::after{content:"";position:absolute;inset:0;border-radius:9999px;background:#B9C09E;animation:pingring 1.8s cubic-bezier(.2,.7,.3,1) infinite;}
+  @keyframes pingring{0%{transform:scale(1); opacity:.7;}100%{transform:scale(2.6); opacity:0;}}
+
+  .msg-in{animation:msgIn .25s ease;}
+  @keyframes msgIn{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
+
+  .typing-dot{animation:typingDot 1.2s ease infinite;}
+  .typing-dot:nth-child(2){animation-delay:.15s;}
+  .typing-dot:nth-child(3){animation-delay:.3s;}
+  @keyframes typingDot{0%,60%,100%{opacity:.35; transform:translateY(0);}30%{opacity:1; transform:translateY(-3px);}}
+
+  .method-item p{max-height:0; overflow:hidden; opacity:0; transition:max-height .4s ease, opacity .35s ease, margin .3s ease;}
+  .method-item.active p{max-height:100px; opacity:1; margin-top:6px;}
+
+  .faq-a{max-height:0; overflow:hidden; opacity:0; transition:max-height .4s ease, opacity .3s ease;}
+  .faq-item.open .faq-a{max-height:200px; opacity:1; margin-top:12px;}
+  .faq-icon-v{transition:transform .3s ease, opacity .3s ease;}
+  .faq-item.open .faq-icon-v{transform:rotate(90deg); opacity:0;}
+
+  .ai-chat.dragging, .ai-chat.dragging *{cursor:grabbing!important;}
+  .ai-chat-window{opacity:0; transform:translateY(16px) scale(.97); pointer-events:none; transition:opacity .28s ease, transform .28s cubic-bezier(.2,.7,.2,1);}
+  .ai-chat.open .ai-chat-window{opacity:1; transform:translateY(0) scale(1); pointer-events:all;}
+
+  /* ---------- Nav scroll-spy: active section indicator ---------- */
+  .nav-link{ position:relative; padding-bottom:5px; }
+  .nav-link::after{
+    content:"";
+    position:absolute; left:0; right:0; bottom:-2px;
+    height:2px; border-radius:2px;
+    background:currentColor;
+    transform:scaleX(0); transform-origin:left;
+    opacity:.55;
+    transition:transform .35s cubic-bezier(.2,.7,.2,1), opacity .3s ease, background-color .3s ease;
+  }
+  .nav-link:hover::after{ transform:scaleX(1); }
+  .nav-link.nav-active{ font-weight:600; opacity:1 !important; color:#B9C09E !important; }
+  .nav-link.nav-active::after{ transform:scaleX(1); opacity:1; background:#B9C09E; }
+  header.is-scrolled .nav-link.nav-active{ color:#5C7A44 !important; }
+  header.is-scrolled .nav-link.nav-active::after{ background:#5C7A44; }
+
+  /* ---------- Premium "arrived" pulse for anchor-jump targets ---------- */
+  @keyframes sectionPulse{
+    0%{ box-shadow: inset 0 0 0 0 rgba(135,144,107,0); }
+    30%{ box-shadow: inset 0 0 70px 12px rgba(135,144,107,0.14); }
+    100%{ box-shadow: inset 0 0 0 0 rgba(135,144,107,0); }
+  }
+  .section-pulse{ animation:sectionPulse 1.3s ease; }
+</style>
+</head>
+<body class="bg-cream text-ink font-sans antialiased">
+
+<!-- ================= HEADER ================= -->
+<header id="site-header" class="fixed top-0 left-0 right-0 z-[100] py-5 transition-all duration-300 border-b border-transparent">
+  <div class="max-w-[1180px] mx-auto px-8 flex items-center justify-between">
+    <a href="#top" id="logoLink" class="flex items-center gap-2.5 font-serif text-[19px] tracking-tight text-paper transition-colors duration-300">
+      <span class="w-[30px] h-[30px] rounded-full flex items-center justify-center shadow-[inset_0_0_0_1px_rgba(255,255,255,0.15)]" style="background:radial-gradient(circle at 35% 30%, #4a5a3c, #1a260f 70%);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F6F4EB" stroke-width="1.4" class="w-4 h-4"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l2.8 2.8M16.2 16.2 19 19M19 5l-2.8 2.8M7.8 16.2 5 19"/></svg>
+      </span>
+      Error.404
+    </a>
+    <nav class="hidden md:flex gap-9 text-[14.5px] font-medium">
+      <a href="#work" class="nav-link text-paper opacity-90 hover:opacity-100 transition">Projects</a>
+      <a href="#pricing" class="nav-link text-paper opacity-90 hover:opacity-100 transition">Services</a>
+      <a href="#method" class="nav-link text-paper opacity-90 hover:opacity-100 transition">Process</a>
+      <a href="#briefings" class="nav-link text-paper opacity-90 hover:opacity-100 transition">Journal</a>
+    </nav>
+    <div class="flex items-center gap-3">
+        <a href="#" id="navCta" class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cream text-ink text-[13.5px] font-semibold border border-cream hover:bg-forest900 hover:text-paper transition">Book Consultation</a>
+      <button id="navToggle" aria-label="Open menu" class="md:hidden flex flex-col items-center justify-center gap-[5px] w-[38px] h-[38px] rounded-full border border-white/35 text-paper transition-colors">
+        <span class="w-[15px] h-[1.4px] bg-current rounded transition-transform duration-300"></span>
+        <span class="w-[15px] h-[1.4px] bg-current rounded transition-opacity duration-200"></span>
+        <span class="w-[15px] h-[1.4px] bg-current rounded transition-transform duration-300"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= MOBILE MENU ================= -->
+<div id="mobileMenu" class="fixed inset-0 z-[98] bg-forest950 flex flex-col items-center justify-center gap-8 -translate-y-4 opacity-0 pointer-events-none transition-all duration-500">
+  <nav class="flex flex-col items-center gap-6">
+    <a href="#work" class="text-paper font-serif text-[28px]">Projects</a>
+    <a href="#pricing" class="text-paper font-serif text-[28px]">Services</a>
+    <a href="#method" class="text-paper font-serif text-[28px]">Process</a>
+    <a href="#briefings" class="text-paper font-serif text-[28px]">Journal</a>
+  </nav>
+  <a href="#" id="mobileNavCta" class="mt-2 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-cream text-ink text-sm font-semibold ">Book Consultation</a>
+</div>
+
+<!-- ================= HERO ================= -->
+<section id="top" class="relative min-h-[76vh] md:min-h-[78vh] flex flex-col justify-end pb-16 md:pb-[70px] pt-[150px] overflow-hidden">
+  <div class="hero-bg absolute inset-0 z-0"></div>
+  <div class="absolute inset-0 z-0" style="background:radial-gradient(circle at 30% 85%, rgba(0,0,0,0.32), transparent 55%), radial-gradient(circle at 75% 95%, rgba(0,0,0,0.26), transparent 50%), linear-gradient(0deg, rgba(10,15,6,0.4), transparent 45%), linear-gradient(180deg, rgba(10,15,6,0.15), transparent 30%);"></div>
+  <div class="grain absolute inset-0 z-[1] opacity-10 pointer-events-none"></div>
+
+  <div class="relative z-[2] max-w-[1180px] mx-auto px-8 w-full">
+    <div class="reveal in inline-flex items-center gap-2.5 bg-forest950/55 border border-white/18 backdrop-blur-md text-paper py-[7px] pl-2 pr-3.5 rounded-full text-[12.5px] font-medium mb-6">
+      <span class="bg-paper text-forest950 font-mono text-[10px] font-bold tracking-wider px-2 py-[3px] rounded-full">NEW</span>
+      AI Site Intelligence &amp; Sustainable Build Systems
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+    </div>
+    <h1 class="reveal in font-serif font-medium leading-[1.08] text-paper text-[34px] sm:text-[42px] md:text-[54px] lg:text-[64px] max-w-[820px] tracking-tight">
+      We build smarter, safer, and greener with AI at the core of every site.
+    </h1>
+    <p class="reveal in text-white/80 text-[15.5px] md:text-[17px] max-w-[480px] mt-5 leading-relaxed">
+      From ground-break to occupancy, Error.404's AI systems keep your build on schedule, on budget, and on spec — while cutting waste at every phase.
+    </p>
+    <div class="reveal in flex flex-wrap gap-3.5 mt-8">
+      <a href="#" id="heroBookBtn" class="inline-flex items-center gap-2 px-5 py-[11px] rounded-full bg-ink text-cream text-[13.5px] font-semibold border border-ink hover:-translate-y-0.5 hover:bg-[#2a2d20] transition">Book a Consultation</a>
+      <a href="#method" id="heroProcessBtn" class="inline-flex items-center gap-2 px-[19px] py-[10px] rounded-full border border-white/35 text-paper text-[13.5px] font-semibold hover:bg-white/10 hover:border-white/60 transition">See our process</a>
+    </div>
+  </div>
+
+  <div class="hidden sm:flex absolute right-8 bottom-8 z-[2] flex-col items-center gap-2.5 text-white/70 text-[11px]">
+    <span>SCROLL</span>
+    <span class="scroll-line w-px h-[38px] bg-white/40"></span>
+  </div>
+</section>
+
+<!-- ================= INTRO STATEMENT ================= -->
+<section id="capabilities" class="py-20 md:py-[120px]">
+  <div class="max-w-[1180px] mx-auto px-8">
+    <p class="reveal font-serif text-[22px] sm:text-[26px] md:text-[32px] font-normal max-w-[820px] leading-snug">
+      We help builders raise structures that are
+      <span class="text-ink">engineered with precision</span> and
+      <span class="text-inksoft">designed to leave a lighter footprint.</span>
+    </p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+      <a href="ai-details.html?id=structural-precision" class="reveal group bg-cream2 border border-black/[0.07] rounded-2xl p-8 text-center hover:-translate-y-1.5 hover:bg-paper hover:shadow-xl transition-all duration-300 block">
+        <svg viewBox="0 0 24 24" class="w-[30px] h-[30px] mx-auto mb-4 stroke-ink fill-none" stroke-width="1.3"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="text-sm font-semibold block">Structural Precision</span>
+        <span class="inline-flex items-center gap-1 text-[11px] text-inksoft mt-2.5 opacity-70 group-hover:opacity-100 group-hover:gap-1.5 transition-all duration-300">Explore Capability <span class="inline-block transition-transform duration-300 group-hover:translate-x-0.5">→</span></span>
+      </a>
+      <a href="ai-details.html?id=site-safety" class="reveal group bg-cream2 border border-black/[0.07] rounded-2xl p-8 text-center hover:-translate-y-1.5 hover:bg-paper hover:shadow-xl transition-all duration-300 block">
+        <svg viewBox="0 0 24 24" class="w-[30px] h-[30px] mx-auto mb-4 stroke-ink fill-none" stroke-width="1.3"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11Z" stroke-linejoin="round"/></svg>
+        <span class="text-sm font-semibold block">Site Safety AI</span>
+        <span class="inline-flex items-center gap-1 text-[11px] text-inksoft mt-2.5 opacity-70 group-hover:opacity-100 group-hover:gap-1.5 transition-all duration-300">Explore Capability <span class="inline-block transition-transform duration-300 group-hover:translate-x-0.5">→</span></span>
+      </a>
+      <a href="ai-details.html?id=sustainable-materials" class="reveal group bg-cream2 border border-black/[0.07] rounded-2xl p-8 text-center hover:-translate-y-1.5 hover:bg-paper hover:shadow-xl transition-all duration-300 block">
+        <svg viewBox="0 0 24 24" class="w-[30px] h-[30px] mx-auto mb-4 stroke-ink fill-none" stroke-width="1.3"><path d="M12 2c3 3.5 5 7.2 5 10.5A5 5 0 0 1 7 12.5C7 9.2 9 5.5 12 2Z"/><path d="M12 22v-5"/></svg>
+        <span class="text-sm font-semibold block">Sustainable Materials</span>
+        <span class="inline-flex items-center gap-1 text-[11px] text-inksoft mt-2.5 opacity-70 group-hover:opacity-100 group-hover:gap-1.5 transition-all duration-300">Explore Capability <span class="inline-block transition-transform duration-300 group-hover:translate-x-0.5">→</span></span>
+      </a>
+      <a href="ai-details.html?id=predictive-scheduling" class="reveal group bg-cream2 border border-black/[0.07] rounded-2xl p-8 text-center hover:-translate-y-1.5 hover:bg-paper hover:shadow-xl transition-all duration-300 block">
+        <svg viewBox="0 0 24 24" class="w-[30px] h-[30px] mx-auto mb-4 stroke-ink fill-none" stroke-width="1.3"><path d="M4 4l4 1M20 4l-4 1M4 20l4-1M20 20l-4-1" stroke-linecap="round"/><circle cx="12" cy="12" r="3.2"/></svg>
+        <span class="text-sm font-semibold block">Predictive Scheduling</span>
+        <span class="inline-flex items-center gap-1 text-[11px] text-inksoft mt-2.5 opacity-70 group-hover:opacity-100 group-hover:gap-1.5 transition-all duration-300">Explore Capability <span class="inline-block transition-transform duration-300 group-hover:translate-x-0.5">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= METHOD ================= -->
+<section id="method" class="py-20 md:py-[120px]">
+    <div class="max-w-[1180px] mx-auto px-8">
+      <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <div class="reveal">
+          <div class="flex items-center gap-3 mb-4"><span class="w-1.5 h-1.5 rounded-full bg-sage"></span><span class="font-mono uppercase tracking-widest text-[11.5px] font-medium">Our Approach</span></div>
+          <h2 class="font-serif font-medium text-[28px] sm:text-[34px] md:text-[42px] tracking-tight">The method behind every build.</h2>
+          <p class="text-inksoft text-[16.5px] leading-relaxed max-w-[520px] mt-4">Discipline over motivation. Structure over chaos. A four-stage engine that keeps every site on schedule and every crew safe.</p>
+  
+          <div class="mt-11 border-t border-black/10" id="method-list">
+            <div class="method-item active flex gap-5 items-start py-6 border-b border-black/10 cursor-pointer" data-gauge="85">
+              <span class="font-mono text-xs text-sage pt-1 w-6 flex-shrink-0">01</span>
+              <div>
+                <h4 class="font-serif text-lg font-medium mb-1 text-forest900">Site Diagnostic Scan</h4>
+                <p class="text-sm text-inksoft leading-relaxed max-w-[420px]">Drone and sensor surveys map terrain, structure, and risk zones before a single crew mobilizes.</p>
+              </div>
+            </div>
+            <div class="method-item flex gap-5 items-start py-6 border-b border-black/10 cursor-pointer" data-gauge="63">
+              <span class="font-mono text-xs text-sage pt-1 w-6 flex-shrink-0">02</span>
+              <div>
+                <h4 class="font-serif text-lg font-medium mb-1">AI Blueprint</h4>
+                <p class="text-sm text-inksoft leading-relaxed max-w-[420px]">Schedules, materials, and crews are sequenced by the model into the fewest moves that keep the build on track.</p>
+              </div>
+            </div>
+            <div class="method-item flex gap-5 items-start py-6 border-b border-black/10 cursor-pointer" data-gauge="74">
+              <span class="font-mono text-xs text-sage pt-1 w-6 flex-shrink-0">03</span>
+              <div>
+                <h4 class="font-serif text-lg font-medium mb-1">Precision Execution</h4>
+                <p class="text-sm text-inksoft leading-relaxed max-w-[420px]">Crews and site robotics execute the blueprint with real-time AI oversight watching sequencing and safety.</p>
+              </div>
+            </div>
+            <div class="method-item flex gap-5 items-start py-6 border-b border-black/10 cursor-pointer" data-gauge="91">
+              <span class="font-mono text-xs text-sage pt-1 w-6 flex-shrink-0">04</span>
+              <div>
+                <h4 class="font-serif text-lg font-medium mb-1">Adaptive Monitoring</h4>
+                <p class="text-sm text-inksoft leading-relaxed max-w-[420px]">Sensors and cameras catch schedule drift, safety issues, and quality gaps continuously — long after breaking ground.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- ============ ডানপাশের প্যানেল ============ -->
+        <div class="reveal relative rounded-[20px] overflow-hidden min-h-[400px] md:min-h-[420px] panel-bg">
+          <div class="absolute inset-0" style="background:linear-gradient(0deg, rgba(10,15,6,0.35), transparent 45%);"></div>
+          
+          <div class="absolute left-4 right-4 md:left-6 bottom-4 md:bottom-6 z-[2] bg-paper/92 backdrop-blur-sm rounded-2xl px-5 py-4 w-auto md:w-[220px] shadow-2xl">
+            <div class="text-xs text-inksoft mb-1.5">Build Efficiency Index</div>
+            <div class="font-serif text-[30px] md:text-[34px] font-medium"><span id="gauge-val">85</span>%</div>
+            <div class="inline-flex items-center gap-1.5 mt-2.5 text-[11px] font-semibold bg-cream2 px-2.5 py-1 rounded-full">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#5C7A44]"></span> Current Status
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ================= OUTCOMES (dark) ================= -->
+<section id="work" class="relative bg-forest900 text-paper py-20 md:py-[120px]">
+  <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 60% 50% at 100% 0%, rgba(255,255,255,0.05), transparent 60%);"></div>
+  <div class="relative max-w-[1180px] mx-auto px-8">
+    <div class="flex justify-between items-end gap-10 flex-wrap mb-14">
+      <div class="reveal">
+        <div class="flex items-center gap-3 mb-4"><span class="w-1.5 h-1.5 rounded-full bg-sagelight"></span><span class="font-mono uppercase tracking-widest text-[11.5px] font-medium text-sagelight">Outcomes</span></div>
+        <h2 class="font-serif font-medium text-[28px] sm:text-[34px] md:text-[42px] max-w-[520px] tracking-tight">Realized potential, measured on-site.</h2>
+      </div>
+      <p class="reveal text-white/65 text-[16.5px] leading-relaxed max-w-[520px]">We judge our own work by the schedule, safety, and cost outcomes it hands back to every crew we work with.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="reveal bg-white/[0.04] border border-white/[0.14] rounded-2xl p-8 hover:bg-white/[0.07] hover:border-white/[0.28] transition-all">
+        <div class="flex justify-between items-start mb-3.5"><h3 class="text-lg font-medium">High-Rise Structural Audit</h3><span class="font-mono text-[10.5px] tracking-wide border border-white/[0.14] px-2.5 py-1 rounded-full text-white/75">CST-01</span></div>
+        <p class="text-[13.5px] text-white/60 leading-relaxed mb-5">Re-sequenced a 40-story mixed-use tower build using real-time structural sensor data and AI-driven crew scheduling.</p>
+        <div class="flex items-baseline gap-2.5 border-t border-white/[0.14] pt-4">
+          <span class="font-serif text-[38px] md:text-[44px] font-medium">32%</span>
+          <span class="text-xs text-white/55 leading-tight">Reduction in<br>Schedule Slip</span>
+        </div>
+      </div>
+      <div class="reveal bg-white/[0.04] border border-white/[0.14] rounded-2xl p-8 hover:bg-white/[0.07] hover:border-white/[0.28] transition-all">
+        <div class="flex justify-between items-start mb-3.5"><h3 class="text-lg font-medium">Site Logistics AI</h3><span class="font-mono text-[10.5px] tracking-wide border border-white/[0.14] px-2.5 py-1 rounded-full text-white/75">LOG-X</span></div>
+        <p class="text-[13.5px] text-white/60 leading-relaxed mb-5">Predictive routing for material delivery across a multi-site regional build-out, cutting idle equipment time.</p>
+        <div class="flex items-baseline gap-2.5 border-t border-white/[0.14] pt-4">
+          <span class="font-serif text-[38px] md:text-[44px] font-medium">$180M</span>
+          <span class="text-xs text-white/55 leading-tight">Material Waste<br>Avoided</span>
+        </div>
+      </div>
+      <div class="reveal bg-white/[0.04] border border-white/[0.14] rounded-2xl p-8 hover:bg-white/[0.07] hover:border-white/[0.28] transition-all">
+        <div class="flex justify-between items-start mb-3.5"><h3 class="text-lg font-medium">Safety Monitoring</h3><span class="font-mono text-[10.5px] tracking-wide border border-white/[0.14] px-2.5 py-1 rounded-full text-white/75">SAF-AI</span></div>
+        <p class="text-[13.5px] text-white/60 leading-relaxed mb-5">Computer-vision monitoring across active job sites flags PPE and fall-hazard violations in real time.</p>
+        <div class="flex items-baseline gap-2.5 border-t border-white/[0.14] pt-4">
+          <span class="font-serif text-[38px] md:text-[44px] font-medium">12X</span>
+          <span class="text-xs text-white/55 leading-tight">Faster Incident<br>Detection</span>
+        </div>
+      </div>
+      <div class="reveal bg-white/[0.04] border border-white/[0.14] rounded-2xl p-8 hover:bg-white/[0.07] hover:border-white/[0.28] transition-all">
+        <div class="flex justify-between items-start mb-3.5"><h3 class="text-lg font-medium">Sustainable Build</h3><span class="font-mono text-[10.5px] tracking-wide border border-white/[0.14] px-2.5 py-1 rounded-full text-white/75">GRN-04</span></div>
+        <p class="text-[13.5px] text-white/60 leading-relaxed mb-5">Optimized material sourcing and embodied-carbon modeling for a net-zero residential development.</p>
+        <div class="flex items-baseline gap-2.5 border-t border-white/[0.14] pt-4">
+          <span class="font-serif text-[38px] md:text-[44px] font-medium">85K</span>
+          <span class="text-xs text-white/55 leading-tight">Tons CO2<br>Avoided</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECT GALLERY ================= -->
+<section id="gallery" class="py-20 md:py-[120px]">
+  <div class="max-w-[1180px] mx-auto px-8">
+    <div class="flex justify-between items-end gap-10 flex-wrap mb-14">
+      <div class="reveal">
+        <div class="flex items-center gap-3 mb-4"><span class="w-1.5 h-1.5 rounded-full bg-sage"></span><span class="font-mono uppercase tracking-widest text-[11.5px] font-medium">Portfolio</span></div>
+        <h2 class="font-serif font-medium text-[26px] sm:text-[32px] md:text-[40px] tracking-tight">Builds across every sector.</h2>
+      </div>
+      <a href="projects.html" class="reveal inline-flex items-center gap-2 px-[19px] py-[10px] rounded-full border border-black/10 text-ink text-[13.5px] font-semibold hover:bg-cream2 transition">View All Projects</a>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <a href="projects.html?id=cedar-ridge" class="reveal group rounded-2xl overflow-hidden border border-black/[0.07] hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 block">
+        <div class="h-[170px] relative" style="background:linear-gradient(150deg,#B7BC9E,#7C8863 45%,#414F33 100%);">
+          <span class="absolute top-3.5 left-3.5 z-[2] text-white text-[11.5px] font-semibold bg-black/28 backdrop-blur-sm px-2.5 py-1 rounded-full">Residential</span>
+        </div>
+        <div class="p-5">
+          <h4 class="font-serif text-[17px] font-medium mb-1.5">Cedar Ridge Net-Zero Homes</h4>
+          <p class="text-[13px] text-inksoft leading-snug">64-unit net-zero community sequenced with AI scheduling.</p>
+        </div>
+      </a>
+      <a href="projects.html?id=harborview" class="reveal group rounded-2xl overflow-hidden border border-black/[0.07] hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 block">
+        <div class="h-[170px] relative" style="background:linear-gradient(150deg,#A9BCAE,#5F8272 45%,#26382D 100%);">
+          <span class="absolute top-3.5 left-3.5 z-[2] text-white text-[11.5px] font-semibold bg-black/28 backdrop-blur-sm px-2.5 py-1 rounded-full">Commercial</span>
+        </div>
+        <div class="p-5">
+          <h4 class="font-serif text-[17px] font-medium mb-1.5">Harborview Office Tower</h4>
+          <p class="text-[13px] text-inksoft leading-snug">40-story build with live structural sensor monitoring.</p>
+        </div>
+      </a>
+      <a href="projects.html?id=riverline" class="reveal group rounded-2xl overflow-hidden border border-black/[0.07] hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 block">
+        <div class="h-[170px] relative" style="background:linear-gradient(150deg,#D8C7A8,#B08A63 40%,#5C4A38 100%);">
+          <span class="absolute top-3.5 left-3.5 z-[2] text-white text-[11.5px] font-semibold bg-black/28 backdrop-blur-sm px-2.5 py-1 rounded-full">Infrastructure</span>
+        </div>
+        <div class="p-5">
+          <h4 class="font-serif text-[17px] font-medium mb-1.5">Riverline Transit Corridor</h4>
+          <p class="text-[13px] text-inksoft leading-snug">Predictive routing kept a 12-mile corridor on schedule.</p>
+        </div>
+      </a>
+      <a href="projects.html?id=fieldstone" class="reveal group rounded-2xl overflow-hidden border border-black/[0.07] hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 block">
+        <div class="h-[170px] relative" style="background:linear-gradient(150deg,#C9CDB8,#8C9670 45%,#33401F 100%);">
+          <span class="absolute top-3.5 left-3.5 z-[2] text-white text-[11.5px] font-semibold bg-black/28 backdrop-blur-sm px-2.5 py-1 rounded-full">Industrial</span>
+        </div>
+        <div class="p-5">
+          <h4 class="font-serif text-[17px] font-medium mb-1.5">Fieldstone Logistics Hub</h4>
+          <p class="text-[13px] text-inksoft leading-snug">Automated safety monitoring across a 900,000 sq ft site.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BRIEFINGS ================= -->
+<section id="briefings" class="py-20 md:py-[120px]">
+  <div class="max-w-[1180px] mx-auto px-8">
+    <div class="flex justify-between items-end gap-10 flex-wrap mb-14">
+      <div class="reveal">
+        <div class="flex items-center gap-3 mb-4"><span class="w-1.5 h-1.5 rounded-full bg-sage"></span><span class="font-mono uppercase tracking-widest text-[11.5px] font-medium">Field Notes</span></div>
+        <h2 class="font-serif font-medium text-[26px] sm:text-[32px] md:text-[40px] tracking-tight">Site intelligence briefings.</h2>
+      </div>
+      <a href="briefings.html" class="reveal inline-flex items-center gap-2 px-[19px] py-[10px] rounded-full border border-black/10 text-ink text-[13.5px] font-semibold hover:bg-cream2 transition">View Archive</a>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <a href="briefings.html?id=drift-doctrine" class="reveal bg-paper border border-black/[0.07] rounded-2xl overflow-hidden hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 block">
+        <div class="h-[190px] relative" style="background:linear-gradient(150deg,#B7BC9E,#7C8863 45%,#414F33 100%);">
+          <span class="absolute top-3.5 left-3.5 z-[2] text-white text-[11.5px] font-semibold bg-black/28 backdrop-blur-sm px-2.5 py-1 rounded-full">Scheduling</span>
+        </div>
+        <div class="p-6">
+          <div class="font-mono text-[11px] text-sage tracking-wide mb-2.5">09 FEB 2026</div>
+          <h4 class="font-serif text-[19px] font-medium leading-snug mb-2.5">The Drift Doctrine: why real-time sensor data changes how we sequence pours.</h4>
+          <p class="text-[13.5px] text-inksoft leading-relaxed">How live structural feedback keeps concrete schedules honest on tall builds.</p>
+        </div>
+      </a>
+      <a href="briefings.html?id=computer-vision" class="reveal bg-paper border border-black/[0.07] rounded-2xl overflow-hidden hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 block">
+        <div class="h-[190px] relative" style="background:linear-gradient(150deg,#D8C7A8,#B08A63 40%,#5C4A38 100%);">
+          <span class="absolute top-3.5 left-3.5 z-[2] text-white text-[11.5px] font-semibold bg-black/28 backdrop-blur-sm px-2.5 py-1 rounded-full">Safety AI</span>
+        </div>
+        <div class="p-6">
+          <div class="font-mono text-[11px] text-sage tracking-wide mb-2.5">02 FEB 2026</div>
+          <h4 class="font-serif text-[19px] font-medium leading-snug mb-2.5">Computer vision on the job site: safety AI without slowing crews down.</h4>
+          <p class="text-[13.5px] text-inksoft leading-relaxed">Strategies for deploying PPE and hazard detection without disrupting daily work.</p>
+        </div>
+      </a>
+      <a href="briefings.html?id=net-zero-guide" class="reveal bg-paper border border-black/[0.07] rounded-2xl overflow-hidden hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 block">
+        <div class="h-[190px] relative" style="background:linear-gradient(150deg,#A9BCAE,#5F8272 45%,#26382D 100%);">
+          <span class="absolute top-3.5 left-3.5 z-[2] text-white text-[11.5px] font-semibold bg-black/28 backdrop-blur-sm px-2.5 py-1 rounded-full">Sustainability</span>
+        </div>
+        <div class="p-6">
+          <div class="font-mono text-[11px] text-sage tracking-wide mb-2.5">28 JAN 2026</div>
+          <h4 class="font-serif text-[19px] font-medium leading-snug mb-2.5">Building net-zero: a tactical guide to embodied carbon tracking.</h4>
+          <p class="text-[13.5px] text-inksoft leading-relaxed">A step-by-step approach to modeling material carbon across a live build.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MEET THE INDUSTRY LEADERS ================= -->
+<section id="leaders" class="py-20 md:py-[120px]">
+
+    <div class="max-w-[1180px] mx-auto px-8">
+  
+      <!-- Section Header -->
+      <div class="flex justify-between items-end gap-10 flex-wrap mb-11">
+  
+        <div class="reveal">
+  
+          <h2
+            class="font-serif font-medium text-[26px] sm:text-[32px] md:text-[42px] max-w-[600px] tracking-tight"
+          >
+            Meet the builders who trust Error.404 to keep every site on track.
+          </h2>
+  
+          <a
+            href="#"
+            class="mt-6 inline-flex items-center gap-2 px-5 py-[11px] rounded-full border border-black/10 text-ink text-[13.5px] font-semibold hover:bg-cream2 transition"
+          >
+            Meet our clients
+          </a>
+  
+        </div>
+  
+        <!-- Slider Buttons -->
+        <div class="reveal flex gap-2.5">
+  
+          <button
+            id="prevTesti"
+            class="w-[38px] h-[38px] rounded-full border border-black/10 flex items-center justify-center hover:bg-cream2 hover:border-ink transition"
+            aria-label="Previous testimonial"
+          >
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+  
+          <button
+            id="nextTesti"
+            class="w-[38px] h-[38px] rounded-full border border-black/10 flex items-center justify-center hover:bg-cream2 hover:border-ink transition"
+            aria-label="Next testimonial"
+          >
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+  
+        </div>
+  
+      </div>
+  
+  
+      <!-- Testimonials -->
+      <div
+        id="testiTrack"
+        class="grid md:grid-cols-2 gap-5"
+      >
+  
+        <!-- ================= CARD 1 ================= -->
+        <div
+          class="testi-card reveal in grid grid-cols-[1fr_130px] bg-cream2 border border-black/[0.07] rounded-2xl overflow-hidden min-h-[260px]"
+        >
+  
+          <!-- Content -->
+          <div class="p-6 flex flex-col justify-between">
+  
+            <div>
+              <div class="font-serif text-base opacity-60 mb-3.5">
+                Harborview Developments
+              </div>
+  
+              <q class="text-[15px] leading-relaxed not-italic block">
+                Error.404's site AI caught a structural sequencing conflict
+                before it cost us three weeks. That alone paid for the engagement.
+              </q>
+            </div>
+  
+            <div class="mt-4">
+
+              <b class="block text-[13.5px]">
+                Elena Marsh
+              </b>
+
+              <span
+                class="text-[11.5px] text-inksoft uppercase tracking-wide"
+              >
+                VP of Construction
+              </span>
+
+              <a href="client-details.html?id=harborview" class="group inline-flex items-center gap-1 text-[11.5px] font-semibold text-ink mt-2.5">Visit My Details <span class="inline-block transition-transform duration-300 group-hover:translate-x-0.5">→</span></a>
+
+            </div>
+
+          </div>
+
+
+          <!-- Elena Image -->
+          <div class="w-[130px] h-full overflow-hidden">
+
+            <img
+              src="/images/elena-marsh.jpg"
+              alt="Elena Marsh"
+              class="w-full h-full object-cover object-center"
+            />
+
+          </div>
+
+        </div>
+  
+  
+        <!-- ================= CARD 2 ================= -->
+        <div
+          class="testi-card reveal in grid grid-cols-[1fr_130px] bg-cream2 border border-black/[0.07] rounded-2xl overflow-hidden min-h-[260px]"
+        >
+  
+          <!-- Content -->
+          <div class="p-6 flex flex-col justify-between">
+  
+            <div>
+  
+              <div class="font-serif text-base opacity-60 mb-3.5">
+                Cascade Builders
+              </div>
+  
+              <q class="text-[15px] leading-relaxed not-italic block">
+                Their safety AI flagged three near-misses in the first month.
+                Our incident rate is down for the first time in years.
+              </q>
+  
+            </div>
+  
+            <div class="mt-4">
+  
+              <b class="block text-[13.5px]">
+                Tomás Rivera
+              </b>
+  
+              <span
+                class="text-[11.5px] text-inksoft uppercase tracking-wide"
+              >
+                Director of Operations
+              </span>
+
+              <a href="client-details.html?id=cascade" class="group inline-flex items-center gap-1 text-[11.5px] font-semibold text-ink mt-2.5">Visit My Details <span class="inline-block transition-transform duration-300 group-hover:translate-x-0.5">→</span></a>
+
+            </div>
+  
+          </div>
+  
+  
+          <!-- Tomás Image -->
+          <div class="w-[130px] h-full overflow-hidden">
+  
+            <img
+              src="GREEN.jpg"
+              alt="Tomás Rivera"
+              class="w-full h-full object-cover object-center"
+            />
+  
+          </div>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  </section>
+
+<!-- ================= FOUNDERS ================= -->
+<!--
+  NOTE: No founder information exists anywhere in the project, so the two
+  cards below are placeholders only — every field is a clearly-labeled
+  "add your info" stand-in, not invented content. Edit the `founders` array
+  near the bottom of the page (search for "const founders") to add real
+  names, roles, photos, and bios. The section, cards, and founder-details.html
+  page are fully wired and will pick up real data automatically once added.
+-->
+<section id="founders" class="py-20 md:py-[120px]">
+  <div class="max-w-[1180px] mx-auto px-8">
+    <div class="flex justify-between items-end gap-10 flex-wrap mb-14">
+      <div class="reveal">
+        <div class="flex items-center gap-3 mb-4"><span class="w-1.5 h-1.5 rounded-full bg-sage"></span><span class="font-mono uppercase tracking-widest text-[11.5px] font-medium">Leadership</span></div>
+        <h2 class="font-serif font-medium text-[26px] sm:text-[32px] md:text-[40px] max-w-[560px] tracking-tight">Meet the people building the intelligence behind better construction.</h2>
+      </div>
+    </div>
+
+    <div id="foundersGrid" class="grid sm:grid-cols-2 gap-5"></div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="py-20 md:py-[120px]">
+  <div class="max-w-[1180px] mx-auto px-8">
+    <div class="grid md:grid-cols-[0.85fr_1.15fr] gap-10 md:gap-16">
+      <div class="reveal">
+        <div class="flex items-center gap-3 mb-4"><span class="w-1.5 h-1.5 rounded-full bg-sage"></span><span class="font-mono uppercase tracking-widest text-[11.5px] font-medium">Operational Intelligence</span></div>
+        <h2 class="font-serif font-medium text-[26px] sm:text-[32px] md:text-[38px] tracking-tight">Questions we hear most.</h2>
+        <p class="text-inksoft text-[16.5px] leading-relaxed mt-4">Common tactical questions about our deployment protocols and field standards.</p>
+      </div>
+
+      <div id="faq-list">
+        <div class="faq-item open reveal border-b border-black/10 py-6 cursor-pointer">
+          <div class="flex justify-between items-center gap-5">
+            <h4 class="font-serif text-[16.5px] font-medium">Do you integrate with our existing project management software?</h4>
+            <span class="faq-icon-v flex-shrink-0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </div>
+          <div class="faq-a"><p class="text-[14.5px] text-inksoft leading-relaxed max-w-[520px]">Yes. Error.404 integrates with the scheduling and cost platforms most crews already run, so field data flows in without a rip-and-replace.</p></div>
+        </div>
+        <div class="faq-item reveal border-b border-black/10 py-6 cursor-pointer">
+          <div class="flex justify-between items-center gap-5">
+            <h4 class="font-serif text-[16.5px] font-medium">How does the AI handle weather and supply-chain disruptions?</h4>
+            <span class="faq-icon-v flex-shrink-0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </div>
+          <div class="faq-a"><p class="text-[14.5px] text-inksoft leading-relaxed max-w-[520px]">The scheduling model re-sequences automatically around delays and flags the downstream trades affected, so your team isn't finding out on-site.</p></div>
+        </div>
+        <div class="faq-item reveal border-b border-black/10 py-6 cursor-pointer">
+          <div class="flex justify-between items-center gap-5">
+            <h4 class="font-serif text-[16.5px] font-medium">Does the safety monitoring replace our site supervisors?</h4>
+            <span class="faq-icon-v flex-shrink-0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </div>
+          <div class="faq-a"><p class="text-[14.5px] text-inksoft leading-relaxed max-w-[520px]">No — it augments them. Cameras and sensors catch what's easy to miss across a large site; your supervisors still make the calls.</p></div>
+        </div>
+        <div class="faq-item reveal border-b border-black/10 py-6 cursor-pointer">
+          <div class="flex justify-between items-center gap-5">
+            <h4 class="font-serif text-[16.5px] font-medium">What happens if a project needs to pause mid-build?</h4>
+            <span class="faq-icon-v flex-shrink-0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </div>
+          <div class="faq-a"><p class="text-[14.5px] text-inksoft leading-relaxed max-w-[520px]">Engagements are structured in clean phases with no lock-in, so monitoring and scheduling can scale down and resume without losing site history.</p></div>
+        </div>
+        <div class="faq-item reveal border-b border-black/10 py-6 cursor-pointer">
+          <div class="flex justify-between items-center gap-5">
+            <h4 class="font-serif text-[16.5px] font-medium">What's the typical timeline from site scan to breaking ground?</h4>
+            <span class="faq-icon-v flex-shrink-0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </div>
+          <div class="faq-a"><p class="text-[14.5px] text-inksoft leading-relaxed max-w-[520px]">Most sites move from diagnostic scan to a live blueprint within two to four weeks, depending on site complexity and permitting.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRICING SECTION ================= -->
+<section id="pricing" class="py-20 md:py-[120px]">
+    <div class="max-w-[1180px] mx-auto px-8">
+      <div class="flex justify-between items-end gap-10 flex-wrap mb-14">
+        <h2 class="reveal font-serif font-medium text-[26px] sm:text-[32px] md:text-[40px] max-w-[480px] tracking-tight">High-impact build intelligence. Clear engagement models.</h2>
+        <p class="reveal text-inksoft text-[16.5px] leading-relaxed max-w-[420px]">Stabilize a site fast, then scale monitoring and scheduling as the build grows.</p>
+      </div>
+  
+      <div class="grid md:grid-cols-3 gap-4.5 gap-y-5" id="pricing-grid">
+        
+        <!-- CARD 1 -->
+        <div class="pricing-card reveal bg-paper border border-black/[0.07] rounded-[18px] p-8 flex flex-col hover:-translate-y-1.5 transition-all cursor-pointer" 
+             data-plan="Site Diagnostic" 
+             data-plan-id="site-diagnostic"
+             data-price="8500"
+             data-bg="bg-forest900"
+             data-text="text-paper"
+             data-btn-bg="bg-paper"
+             data-btn-text="text-forest950"
+             data-btn-default-bg="bg-ink"
+             data-btn-default-text="text-cream">
+          <div class="font-mono text-[10.5px] tracking-wide text-sage mb-2.5">AUDIT &amp; STABILIZATION</div>
+          <h3 class="text-[21px] font-medium mb-6">Site Diagnostic</h3>
+          <ul class="flex flex-col gap-2.5 mb-7 flex-grow text-[13.5px]">
+            <li class="flex gap-2.5 items-start"><svg viewBox="0 0 24 24" class="w-[15px] h-[15px] mt-0.5 flex-shrink-0 stroke-sage fill-none" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>72-hour drone &amp; sensor survey</li>
+            <li class="flex gap-2.5 items-start"><svg viewBox="0 0 24 24" class="w-[15px] h-[15px] mt-0.5 flex-shrink-0 stroke-sage fill-none" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Structural risk assessment</li>
+            <li class="flex gap-2.5 items-start"><svg viewBox="0 0 24 24" class="w-[15px] h-[15px] mt-0.5 flex-shrink-0 stroke-sage fill-none" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Safety baseline audit</li>
+            <li class="flex gap-2.5 items-start"><svg viewBox="0 0 24 24" class="w-[15px] h-[15px] mt-0.5 flex-shrink-0 stroke-sage fill-none" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Schedule feasibility review</li>
+            <li class="flex gap-2.5 items-start"><svg viewBox="0 0 24 24" class="w-[15px] h-[15px] mt-0.5 flex-shrink-0 stroke-sage fill-none" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Cancel anytime</li>
+          </ul>
+          <div class="flex items-baseline gap-1.5 pt-5 border-t border-black/10 mb-5">
+            <span class="font-serif text-[32px] font-medium">$8,500</span><span class="text-[12.5px] text-inksoft">/ audit</span>
+          </div>
+          <button class="select-plan-btn w-full text-center py-3.5 rounded-full text-[13.5px] font-semibold bg-ink text-cream hover:opacity-85 transition">Start Diagnostic</button>
+        </div>
+  
+        <!-- CARD 2 (ডিফল্ট সিলেক্ট) -->
+        <div class="pricing-card reveal bg-forest900 text-paper border-2 border-sage rounded-[18px] p-8 flex flex-col shadow-[0_30px_60px_-28px_rgba(14,20,8,0.55)] hover:-translate-y-1.5 transition-all cursor-pointer active"
+             data-plan="Full Build Intelligence"
+             data-plan-id="full-build"
+             data-price="24000"
+             data-bg="bg-forest900"
+             data-text="text-paper"
+             data-btn-bg="bg-paper"
+             data-btn-text="text-forest950"
+             data-btn-default-bg="bg-ink"
+             data-btn-default-text="text-cream">
+          <div class="absolute top-0 right-0 w-40 h-40 pointer-events-none" style="background:radial-gradient(circle, rgba(255,255,255,0.07), transparent 70%);"></div>
+          <div class="font-mono text-[10.5px] tracking-wide text-sagelight mb-2.5">FULL BUILD INTELLIGENCE</div>
+          <h3 class="text-[21px] font-medium mb-6">Full Build Intelligence</h3>
+          <ul class="flex flex-col gap-2.5 mb-7 flex-grow text-[13.5px]">
+            <li class="flex gap-2.5 items-start"><svg viewBox="0 0 24 24" class="w-[15px] h-[15px] mt-0.5 flex-shrink-0 stroke-sagelight fill-none" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Everything in Diagnostic</li>
+            <li class="flex gap-2.5 items-start"><svg viewBox="0 0 24 24" class="w-[15px] h-[15px] mt-0.5 flex-shrink-0 stroke-sagelight fill-none" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Dedicated AI ops team</li>
+            <li class="flex gap-2.5 items-start"><svg viewBox="0 0 24 24" class="w-[15px] h-[15px] mt-0.5 flex-shrink-0 stroke-sagelight fill-none" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Real-time site monitoring</li>
+            <li class="flex gap-2.5 items-start"><svg viewBox="0 0 24 24" class="w-[15px] h-[15px] mt-0.5 flex-shrink-0 stroke-sagelight fill-none" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Predictive scheduling</li>
+            <li class="flex gap-2.5 items-start"><svg viewBox="0 0 24 24" class="w-[15px] h-[15px] mt-0.5 flex-shrink-0 stroke-sagelight fill-none" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Computer-vision safety AI</li>
+            <li class="flex gap-2.5 items-start"><svg viewBox="0 0 24 24" class="w-[15px] h-[15px] mt-0.5 flex-shrink-0 stroke-sagelight fill-none" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Unlimited site revisions</li>
+          </ul>
+          <div class="flex items-baseline gap-1.5 pt-5 border-t border-white/[0.14] mb-5">
+            <span class="font-serif text-[32px] font-medium">$24,000</span><span class="text-[12.5px] text-white/60">/ month</span>
+          </div>
+          <button class="select-plan-btn w-full text-center py-3.5 rounded-full text-[13.5px] font-semibold bg-paper text-forest950 hover:opacity-85 transition">Mobilize Team</button>
+        </div>
+  
+        <!-- CARD 3 -->
+        <div class="pricing-card reveal bg-paper border border-black/[0.07] rounded-[18px] p-8 flex flex-col hover:-translate-y-1.5 transition-all cursor-pointer"
+             data-plan="Portfolio Command"
+             data-plan-id="portfolio-command"
+             data-price="custom"
+             data-bg="bg-forest900"
+             data-text="text-paper"
+             data-btn-bg="bg-paper"
+             data-btn-text="text-forest950"
+             data-btn-default-bg="bg-ink"
+             data-btn-default-text="text-cream">
+          <div class="font-mono text-[10.5px] tracking-wide text-sage mb-2.5">MULTI-SITE PORTFOLIO</div>
+          <h3 class="text-[21px] font-medium mb-6">Portfolio Command</h3>
+          <ul class="flex flex-col gap-2.5 mb-7 flex-grow text-[13.5px]">
+            <li class="flex gap-2.5 items-start"><svg viewBox="0 0 24 24" class="w-[15px] h-[15px] mt-0.5 flex-shrink-0 stroke-sage fill-none" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Multiple dedicated pods</li>
+            <li class="flex gap-2.5 items-start"><svg viewBox="0 0 24 24" class="w-[15px] h-[15px] mt-0.5 flex-shrink-0 stroke-sage fill-none" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Custom SLA guarantees</li>
+            <li class="flex gap-2.5 items-start"><svg viewBox="0 0 24 24" class="w-[15px] h-[15px] mt-0.5 flex-shrink-0 stroke-sage fill-none" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>On-site sensor hardware</li>
+            <li class="flex gap-2.5 items-start"><svg viewBox="0 0 24 24" class="w-[15px] h-[15px] mt-0.5 flex-shrink-0 stroke-sage fill-none" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>White-glove onboarding</li>
+            <li class="flex gap-2.5 items-start"><svg viewBox="0 0 24 24" class="w-[15px] h-[15px] mt-0.5 flex-shrink-0 stroke-sage fill-none" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>24/7 priority support</li>
+            <li class="flex gap-2.5 items-start"><svg viewBox="0 0 24 24" class="w-[15px] h-[15px] mt-0.5 flex-shrink-0 stroke-sage fill-none" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Vendor governance</li>
+          </ul>
+          <div class="flex items-baseline gap-1.5 pt-5 border-t border-black/10 mb-5">
+            <span class="font-serif text-[32px] font-medium">Custom</span><span class="text-[12.5px] text-inksoft">contact us</span>
+          </div>
+          <button class="select-plan-btn w-full text-center py-3.5 rounded-full text-[13.5px] font-semibold bg-ink text-cream hover:opacity-85 transition">Contact Sales</button>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+
+<!-- ================= INSTANT ESTIMATE ================= -->
+<section class="py-20 md:py-[100px]">
+  <div class="max-w-[1180px] mx-auto px-8">
+    <div class="reveal rounded-[22px] border border-black/[0.07] bg-forest900 text-paper p-8 md:p-12 grid md:grid-cols-[1fr_1.1fr] gap-10 items-center overflow-hidden relative">
+      <div class="absolute inset-0 pointer-events-none opacity-40" style="background:radial-gradient(ellipse 60% 60% at 90% 10%, rgba(185,192,158,0.18), transparent 60%);"></div>
+      <div class="relative">
+        <div class="font-mono uppercase tracking-widest text-[11.5px] font-medium text-sagelight mb-3">AI Estimate</div>
+        <h3 class="font-serif text-[26px] md:text-[32px] font-medium mb-3">Get a ballpark build estimate in seconds.</h3>
+        <p class="text-white/70 text-[14.5px] leading-relaxed max-w-[380px]">A rough, directional number based on project type, square footage, and timeline — a real quote follows a full site diagnostic.</p>
+      </div>
+      <div class="relative bg-paper text-ink rounded-2xl p-6 md:p-7">
+        <div class="grid sm:grid-cols-2 gap-4 mb-4">
+          <div>
+            <label class="block font-mono text-[10.5px] uppercase tracking-wide text-inksoft mb-2">Project Type</label>
+            <select id="estType" class="w-full border border-black/10 bg-cream2 rounded-lg px-3.5 py-2.5 text-sm outline-none focus:border-sage focus:bg-paper transition">
+              <option value="120">Residential</option>
+              <option value="180">Commercial</option>
+              <option value="260">Industrial</option>
+              <option value="220">Infrastructure</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-mono text-[10.5px] uppercase tracking-wide text-inksoft mb-2">Square Footage</label>
+            <input id="estSqft" type="number" placeholder="e.g. 12000" class="w-full border border-black/10 bg-cream2 rounded-lg px-3.5 py-2.5 text-sm outline-none focus:border-sage focus:bg-paper transition">
+          </div>
+        </div>
+        <div class="mb-5">
+          <label class="block font-mono text-[10.5px] uppercase tracking-wide text-inksoft mb-2">Target Timeline</label>
+          <select id="estTimeline" class="w-full border border-black/10 bg-cream2 rounded-lg px-3.5 py-2.5 text-sm outline-none focus:border-sage focus:bg-paper transition">
+            <option value="1">Standard</option>
+            <option value="1.18">Accelerated (+18%)</option>
+            <option value="0.92">Flexible (−8%)</option>
+          </select>
+        </div>
+        <button id="estBtn" class="w-full py-3.5 rounded-lg bg-ink text-cream text-sm font-semibold hover:bg-[#2a2d20] transition">Calculate Estimate</button>
+        <div id="estResult" class="mt-4 text-center hidden">
+          <div class="font-serif text-[30px] font-medium" id="estValue">$0</div>
+          <div class="text-xs text-inksoft mt-1">Directional range — confirmed after site diagnostic</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="py-20 md:py-[120px]">
+  <div class="max-w-[1180px] mx-auto px-8">
+    <div class="reveal grid md:grid-cols-[0.9fr_1.1fr] rounded-[22px] overflow-hidden border border-black/[0.07]">
+      <div class="relative p-8 md:p-10 flex flex-col justify-end min-h-[300px] md:min-h-[420px] panel-bg">
+        <div class="absolute inset-0" style="background:linear-gradient(0deg, rgba(29, 66, 1, 0.801), transparent 45%);"></div>
+        <span class="relative w-11 h-11 rounded-full mb-auto shadow-[inset_0_0_0_1px_rgba(255,255,255,0.2)]" style="background:radial-gradient(circle at 35% 30%,#5b6a49,#1a260f 75%);"></span>
+        <h3 class="relative text-paper text-[28px] md:text-[30px] font-serif mb-3">Let's talk about your next build.</h3>
+        <p class="relative text-white/78 text-[14.5px] max-w-[320px] leading-relaxed">Ready to bring AI onto your site? Tell us about the project and we'll follow up within one business day.</p>
+      </div>
+      <div class="bg-paper p-8 md:p-10">
+        <form id="contactForm">
+          <div class="grid sm:grid-cols-2 gap-4 mb-4">
+            <div>
+              <label class="block font-mono text-[10.5px] uppercase tracking-wide text-inksoft mb-2">First Name</label>
+              <input type="text" placeholder="Jane" required class="w-full border border-black/10 bg-cream2 rounded-lg px-3.5 py-3 text-sm outline-none focus:border-sage focus:bg-paper transition">
+            </div>
+            <div>
+              <label class="block font-mono text-[10.5px] uppercase tracking-wide text-inksoft mb-2">Last Name</label>
+              <input type="text" placeholder="Doe" required class="w-full border border-black/10 bg-cream2 rounded-lg px-3.5 py-3 text-sm outline-none focus:border-sage focus:bg-paper transition">
+            </div>
+          </div>
+          <div class="mb-4">
+            <label class="block font-mono text-[10.5px] uppercase tracking-wide text-inksoft mb-2">Email Address</label>
+            <input type="email" placeholder="jane@company.com" required class="w-full border border-black/10 bg-cream2 rounded-lg px-3.5 py-3 text-sm outline-none focus:border-sage focus:bg-paper transition">
+          </div>
+          <div class="mb-4">
+            <label class="block font-mono text-[10.5px] uppercase tracking-wide text-inksoft mb-2">Message</label>
+            <textarea placeholder="Tell us about your project..." required class="w-full border border-black/10 bg-cream2 rounded-lg px-3.5 py-3 text-sm outline-none focus:border-sage focus:bg-paper transition min-h-[96px] resize-y"></textarea>
+          </div>
+          <button type="submit" class="w-full py-3.5 rounded-lg bg-ink text-cream text-sm font-semibold hover:bg-[#2a2d20] transition">Send Message</button>
+          <div id="formNote" class="text-center text-xs text-sage mt-2.5 opacity-0 transition-opacity">Thanks — we'll be in touch within one business day.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-forest950 text-white/85 pt-20">
+  <div class="max-w-[1180px] mx-auto px-8">
+    <div class="grid sm:grid-cols-2 md:grid-cols-[1.4fr_0.8fr_0.8fr_1fr] gap-10 pb-14 border-b border-white/[0.14]">
+      <div>
+        <a href="#top" class="flex items-center gap-2.5 font-serif text-[19px] text-paper">
+          <span class="w-[30px] h-[30px] rounded-full flex items-center justify-center shadow-[inset_0_0_0_1px_rgba(255,255,255,0.15)]" style="background:radial-gradient(circle at 35% 30%, #4a5a3c, #1a260f 70%);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#F6F4EB" stroke-width="1.4" class="w-4 h-4"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l2.8 2.8M16.2 16.2 19 19M19 5l-2.8 2.8M7.8 16.2 5 19"/></svg>
+          </span>
+          Error.404
+        </a>
+        <p class="text-[13.5px] text-white/60 leading-relaxed my-4 max-w-[280px]">AI-powered construction intelligence for crews who build fast, safe, and sustainably. Engineered in New York, deployed on job sites nationwide.</p>
+        <div class="flex gap-2.5">
+          <a href="#" class="w-[34px] h-[34px] rounded-full border border-white/[0.14] flex items-center justify-center hover:bg-white/[0.08] transition"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-paper"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7l-5.5-7.2L4.4 22H1.3l8.2-9.3L1 2h7.2l5 6.6L18.9 2Zm-1.2 18h1.7L7.3 4H5.5l12.2 16Z"/></svg></a>
+          <a href="#" class="w-[34px] h-[34px] rounded-full border border-white/[0.14] flex items-center justify-center hover:bg-white/[0.08] transition"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-paper"><path d="M19 3A2 2 0 0 1 21 5v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14ZM8.5 17.5v-7H6v7h2.5Zm-1.25-8a1.45 1.45 0 1 0 0-2.9 1.45 1.45 0 0 0 0 2.9ZM18 17.5v-3.9c0-2.1-1.13-3.08-2.63-3.08-1.21 0-1.75.66-2.05 1.13v-.97h-2.5c.03.66 0 7 0 7h2.5v-3.9c0-.21.02-.42.08-.57.17-.42.55-.86 1.2-.86.85 0 1.19.65 1.19 1.6v3.73H18Z"/></svg></a>
+          <a href="#" class="w-[34px] h-[34px] rounded-full border border-white/[0.14] flex items-center justify-center hover:bg-white/[0.08] transition"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-paper"><path d="M12 2.2c2.7 0 3 0 4.1.06 1.1.05 1.8.22 2.4.46.6.24 1.1.56 1.65 1.1.5.5.85 1.03 1.1 1.65.24.6.4 1.3.46 2.4.05 1.1.06 1.4.06 4.1s0 3-.06 4.1c-.05 1.1-.22 1.8-.46 2.4a4.4 4.4 0 0 1-1.1 1.65c-.5.5-1.03.85-1.65 1.1-.6.24-1.3.4-2.4.46-1.1.05-1.4.06-4.1.06s-3 0-4.1-.06c-1.1-.05-1.8-.22-2.4-.46a4.4 4.4 0 0 1-1.65-1.1 4.4 4.4 0 0 1-1.1-1.65c-.24-.6-.4-1.3-.46-2.4C2.2 15 2.2 14.7 2.2 12s0-3 .06-4.1c.05-1.1.22-1.8.46-2.4.24-.62.56-1.15 1.1-1.65.5-.5 1.03-.86 1.65-1.1.6-.24 1.3-.4 2.4-.46C8.98 2.2 9.28 2.2 12 2.2Zm0 1.8c-2.65 0-2.96 0-4 .05-.97.05-1.5.2-1.85.34-.46.18-.79.4-1.14.75-.35.35-.57.68-.75 1.14-.14.35-.3.88-.34 1.85-.05 1.04-.05 1.35-.05 4s0 2.96.05 4c.05.97.2 1.5.34 1.85.18.46.4.79.75 1.14.35.35.68.57 1.14.75.35.14.88.3 1.85.34 1.04.05 1.35.05 4 .05s2.96 0 4-.05c.97-.05 1.5-.2 1.85-.34.46-.18.79-.4 1.14-.75.35-.35.57-.68.75-1.14.14-.35.3-.88.34-1.85.05-1.04.05-1.35.05-4s0-2.96-.05-4c-.05-.97-.2-1.5-.34-1.85a3.1 3.1 0 0 0-.75-1.14 3.1 3.1 0 0 0-1.14-.75c-.35-.14-.88-.3-1.85-.34-1.04-.05-1.35-.05-4-.05Zm0 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm0 1.8a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Zm5.7-2a1.05 1.05 0 1 1-2.1 0 1.05 1.05 0 0 1 2.1 0Z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5 class="font-mono uppercase tracking-widest text-[11px] text-white/55 mb-4">Services</h5>
+        <a href="#pricing" class="block text-[13.5px] text-white/82 py-1.5 hover:text-paper transition">Site Diagnostic</a>
+        <a href="#pricing" class="block text-[13.5px] text-white/82 py-1.5 hover:text-paper transition">Full Build Intelligence</a>
+        <a href="#pricing" class="block text-[13.5px] text-white/82 py-1.5 hover:text-paper transition">Portfolio Command</a>
+        <a href="#gallery" class="block text-[13.5px] text-white/82 py-1.5 hover:text-paper transition">Project Gallery</a>
+      </div>
+      <div>
+        <h5 class="font-mono uppercase tracking-widest text-[11px] text-white/55 mb-4">Company</h5>
+        <a href="#capabilities" class="block text-[13.5px] text-white/82 py-1.5 hover:text-paper transition">AI Capabilities</a>
+        <a href="#method" class="block text-[13.5px] text-white/82 py-1.5 hover:text-paper transition">About Error.404</a>
+        <a href="#leaders" class="block text-[13.5px] text-white/82 py-1.5 hover:text-paper transition">Clients</a>
+        <a href="#founders" class="block text-[13.5px] text-white/82 py-1.5 hover:text-paper transition">Founders</a>
+        <a href="#briefings" class="block text-[13.5px] text-white/82 py-1.5 hover:text-paper transition">Field Notes</a>
+        <a href="#" class="block text-[13.5px] text-white/82 py-1.5 hover:text-paper transition">Careers <span class="text-[9px] font-mono bg-sage text-forest950 px-1.5 py-0.5 rounded-full ml-1.5 align-middle">HIRING</span></a>
+        <a href="#contact" class="block text-[13.5px] text-white/82 py-1.5 hover:text-paper transition">Contact</a>
+      </div>
+      <div>
+        <h5 class="font-mono uppercase tracking-widest text-[11px] text-white/55 mb-4">Subscribe</h5>
+        <p class="text-[13px] text-white/60 leading-relaxed mb-3.5">Field notes on AI, safety, and sustainable building — quarterly.</p>
+        <div class="flex gap-2">
+          <input type="email" placeholder="Enter your email" class="flex-1 bg-white/[0.06] border border-white/[0.14] rounded-lg px-3.5 py-2.5 text-paper text-[13px] outline-none placeholder:text-white/40">
+          <button class="w-[42px] flex-shrink-0 rounded-lg bg-paper flex items-center justify-center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#181A13" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 py-6 text-xs text-white/50">
+      <span>&copy; 2026 Error.404 Systems Inc. All rights reserved.</span>
+      <div class="flex gap-5">
+        <a href="#" class="hover:text-white/80 transition">Privacy Policy</a>
+        <a href="#" class="hover:text-white/80 transition">Terms of Service</a>
+        <a href="#" class="hover:text-white/80 transition">Security</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- ================= প্রিমিয়াম কনসালটেশন ওভারলে ================= -->
+<div id="consultationOverlay" class="fixed inset-0 z-[999] bg-black/80 backdrop-blur-xl hidden overflow-y-auto">
+  
+    <div class="min-h-screen flex items-center justify-center p-4 md:p-8 py-12">
+      <div class="bg-paper rounded-[30px] max-w-5xl w-full shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-300 flex flex-col md:flex-row relative">
+        
+        <!-- ক্লোজ বাটন (মোবাইলে) -->
+        <button id="closeConsultOverlay" class="absolute top-4 right-4 md:top-6 md:right-6 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 transition z-10 md:hidden">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+  
+        <!-- বাম দিক: ব্র্যান্ডিং + টিএন্ডসি -->
+        <div class="bg-forest900 text-paper p-8 md:p-12 w-full md:w-[40%] flex flex-col justify-between relative overflow-hidden md:min-h-[600px]">
+          <div class="absolute top-[-80px] right-[-80px] w-48 h-48 rounded-full bg-white/5 pointer-events-none"></div>
+          <div class="absolute bottom-[-60px] left-[-60px] w-32 h-32 rounded-full bg-white/5 pointer-events-none"></div>
+          
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <span class="w-10 h-10 rounded-full flex items-center justify-center shadow-[inset_0_0_0_1px_rgba(255,255,255,0.2)]" style="background:radial-gradient(circle at 35% 30%, #5b6a49, #1a260f 75%);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#F6F4EB" stroke-width="1.4" class="w-5 h-5"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l2.8 2.8M16.2 16.2 19 19M19 5l-2.8 2.8M7.8 16.2 5 19"/></svg>
+              </span>
+              <span class="font-serif text-[22px] tracking-tight">Error.404</span>
+            </div>
+            <h3 class="font-serif text-[28px] md:text-[34px] font-medium leading-tight mb-4">Book a Consultation</h3>
+            <p class="text-white/70 text-[14px] leading-relaxed">Let's discuss how AI-powered construction intelligence can transform your next build. One of our experts will reach out to you.</p>
+          </div>
+  
+          <!-- T&C সেকশন -->
+          <div class="mt-8 md:mt-0 border-t border-white/10 pt-6">
+            <div class="flex items-start gap-3 mb-4">
+              <svg class="w-5 h-5 text-sagelight flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11Z"/></svg>
+              <p class="text-[12.5px] text-white/60 leading-relaxed">Your data is 100% confidential. We never share or sell your information.</p>
+            </div>
+            <div class="flex items-start gap-3 mb-4">
+              <svg class="w-5 h-5 text-sagelight flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2c3 3.5 5 7.2 5 10.5A5 5 0 0 1 7 12.5C7 9.2 9 5.5 12 2Z"/><path d="M12 22v-5"/></svg>
+              <p class="text-[12.5px] text-white/60 leading-relaxed">Cancel or reschedule your consultation up to 24 hours before the meeting.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-sagelight flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l4 1M20 4l-4 1M4 20l4-1M20 20l-4-1" stroke-linecap="round"/><circle cx="12" cy="12" r="3.2"/></svg>
+              <p class="text-[12.5px] text-white/60 leading-relaxed">You'll receive a confirmation email and SMS with all the meeting details.</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- ডান দিক: কনসালটেশন ফর্ম -->
+        <div class="p-8 md:p-12 w-full md:w-[60%] bg-paper relative">
+          <button id="closeConsultOverlayDesktop" class="absolute top-4 right-4 md:top-6 md:right-6 w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-inksoft hover:bg-cream2 transition hidden md:flex">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </button>
+  
+          <div class="flex justify-between items-start mb-6 pr-12">
+            <div>
+              <span class="font-mono text-[10px] uppercase tracking-widest text-sage">Book Your Consultation</span>
+              <h4 class="font-serif text-[24px] font-medium mt-1">Schedule a Meeting</h4>
+            </div>
+          </div>
+  
+          <form id="consultForm">
+            <!-- নাম -->
+            <div class="grid grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="block font-mono text-[10.5px] uppercase tracking-wide text-inksoft mb-2">First Name</label>
+                <input type="text" placeholder="Jane" required class="w-full border border-black/10 bg-cream2 rounded-xl px-4 py-3.5 text-sm outline-none focus:border-sage focus:bg-paper transition placeholder:text-inksoft/40" id="consultFirstName">
+              </div>
+              <div>
+                <label class="block font-mono text-[10.5px] uppercase tracking-wide text-inksoft mb-2">Last Name</label>
+                <input type="text" placeholder="Doe" required class="w-full border border-black/10 bg-cream2 rounded-xl px-4 py-3.5 text-sm outline-none focus:border-sage focus:bg-paper transition placeholder:text-inksoft/40" id="consultLastName">
+              </div>
+            </div>
+  
+            <!-- ইমেইল + ফোন -->
+            <div class="grid grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="block font-mono text-[10.5px] uppercase tracking-wide text-inksoft mb-2">Email Address</label>
+                <input type="email" placeholder="jane@company.com" required class="w-full border border-black/10 bg-cream2 rounded-xl px-4 py-3.5 text-sm outline-none focus:border-sage focus:bg-paper transition placeholder:text-inksoft/40" id="consultEmail">
+              </div>
+              <div>
+                <label class="block font-mono text-[10.5px] uppercase tracking-wide text-inksoft mb-2">Phone Number</label>
+                <input type="tel" placeholder="+1 234 567 8900" required class="w-full border border-black/10 bg-cream2 rounded-xl px-4 py-3.5 text-sm outline-none focus:border-sage focus:bg-paper transition placeholder:text-inksoft/40" id="consultPhone">
+              </div>
+            </div>
+  
+            <!-- তারিখ ও সময় -->
+            <div class="grid grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="block font-mono text-[10.5px] uppercase tracking-wide text-inksoft mb-2">Preferred Date</label>
+                <input type="date" required class="w-full border border-black/10 bg-cream2 rounded-xl px-4 py-3.5 text-sm outline-none focus:border-sage focus:bg-paper transition" id="consultDate">
+              </div>
+              <div>
+                <label class="block font-mono text-[10.5px] uppercase tracking-wide text-inksoft mb-2">Preferred Time</label>
+                <input type="time" required class="w-full border border-black/10 bg-cream2 rounded-xl px-4 py-3.5 text-sm outline-none focus:border-sage focus:bg-paper transition" id="consultTime">
+              </div>
+            </div>
+  
+            <!-- মেসেজ -->
+            <div class="mb-4">
+              <label class="block font-mono text-[10.5px] uppercase tracking-wide text-inksoft mb-2">Project Details (Optional)</label>
+              <textarea placeholder="Tell us about your project..." class="w-full border border-black/10 bg-cream2 rounded-xl px-4 py-3.5 text-sm outline-none focus:border-sage focus:bg-paper transition min-h-[80px] resize-y placeholder:text-inksoft/40" id="consultMessage"></textarea>
+            </div>
+  
+            <!-- T&C চেকবক্স -->
+            <div class="flex items-start gap-3 mb-6">
+              <input type="checkbox" id="consultAgreeTerms" required class="mt-1 w-4 h-4 rounded border-black/10 text-forest900 focus:ring-forest900 accent-forest900">
+              <label for="consultAgreeTerms" class="text-[12.5px] text-inksoft leading-relaxed cursor-pointer">
+                I agree to the <a href="#" class="text-ink underline hover:no-underline">Terms of Service</a> and <a href="#" class="text-ink underline hover:no-underline">Privacy Policy</a>.
+              </label>
+            </div>
+  
+            <!-- সাবমিট বাটন -->
+            <button type="submit" class="w-full py-4 rounded-xl bg-ink text-cream text-[15px] font-semibold hover:bg-[#2a2d20] transition shadow-lg shadow-ink/20">Book Consultation</button>
+          </form>
+  
+          <!-- সফলতা মেসেজ -->
+          <div id="consultSuccess" class="hidden text-center mt-6">
+            <div class="text-5xl mb-3">✅</div>
+            <h4 class="font-serif text-[24px] font-medium text-forest900">Consultation Booked!</h4>
+            <p class="text-sm text-inksoft mt-2">Thank you! We've sent a confirmation to your email <span id="confirmEmail" class="font-medium text-ink"></span> and SMS to <span id="confirmPhone" class="font-medium text-ink"></span>.</p>
+            <p class="text-xs text-inksoft mt-1">Our team will reach out shortly to confirm your meeting.</p>
+            <button id="closeConsultSuccess" class="mt-5 px-8 py-3 rounded-full bg-ink text-cream text-sm font-semibold hover:bg-[#2a2d20] transition">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- ================= AI CHAT WIDGET (draggable) ================= -->
+<div class="ai-chat fixed right-7 bottom-7 z-[200] select-none" id="aiChat">
+  <div class="ai-chat-window absolute right-0 bottom-[74px] w-[340px] h-[460px] bg-paper border border-black/[0.07] rounded-[18px] shadow-2xl flex flex-col overflow-hidden" id="aiChatWindow">
+    <div class="bg-forest900 text-paper px-4 py-3.5 flex items-center justify-between cursor-grab flex-shrink-0" id="aiChatHeader" style="touch-action:none;">
+      <div class="flex items-center gap-2.5 text-[13.5px] font-semibold">
+        <span class="w-[22px] h-[22px] rounded-full flex-shrink-0 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.2)]" style="background:radial-gradient(circle at 35% 30%,#5b6a49,#1a260f 75%);"></span>
+        Error.404 Site Assistant
+      </div>
+      <button class="w-[26px] h-[26px] rounded-full border border-white/25 flex items-center justify-center hover:bg-white/10 transition" id="aiChatClose" aria-label="Close chat">&times;</button>
+    </div>
+    <div class="flex-1 overflow-y-auto p-4 flex flex-col gap-3" id="aiChatBody">
+      <div class="msg-in max-w-[82%] text-[13.5px] leading-relaxed px-3.5 py-2.5 rounded-2xl rounded-bl-sm bg-cream2 self-start">Hi, I'm the Error.404 assistant. Ask me about services, pricing, or how a build engagement works — or drag me anywhere on the page.</div>
+    </div>
+    <div class="flex flex-wrap gap-1.5 px-4 pb-3 flex-shrink-0" id="aiChatQuick">
+      <button type="button" data-q="pricing" class="text-[11.5px] border border-black/10 rounded-full px-2.5 py-1.5 bg-cream2 text-inksoft hover:bg-paper hover:border-sage transition">Pricing</button>
+      <button type="button" data-q="services" class="text-[11.5px] border border-black/10 rounded-full px-2.5 py-1.5 bg-cream2 text-inksoft hover:bg-paper hover:border-sage transition">Services</button>
+      <button type="button" data-q="contact" class="text-[11.5px] border border-black/10 rounded-full px-2.5 py-1.5 bg-cream2 text-inksoft hover:bg-paper hover:border-sage transition">Talk to a human</button>
+    </div>
+    <form class="flex gap-2 p-3 border-t border-black/[0.07] flex-shrink-0" id="aiChatForm">
+      <input type="text" id="aiChatInput" placeholder="Type a message..." autocomplete="off" class="flex-1 border border-black/10 bg-cream2 rounded-lg px-3.5 py-2.5 text-[13px] outline-none focus:border-sage focus:bg-paper transition">
+      <button type="submit" aria-label="Send" class="w-[38px] flex-shrink-0 rounded-lg bg-ink text-cream flex items-center justify-center hover:bg-[#2a2d20] transition"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg></button>
+    </form>
+  </div>
+  <button class="w-[58px] h-[58px] rounded-full flex items-center justify-center border-none relative shadow-[0_16px_32px_-12px_rgba(14,20,8,0.55),inset_0_0_0_1px_rgba(255,255,255,0.14)] hover:scale-105 transition-transform" id="aiChatBubble" aria-label="Open chat" style="background:radial-gradient(circle at 32% 28%, #47593a, #0E160A 75%); touch-action:none; cursor:grab;">
+    <span class="ping-ring absolute top-0.5 right-0.5 w-[11px] h-[11px] rounded-full bg-sagelight shadow-[0_0_0_2px_#0E160A]"></span>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F6F4EB" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>
+  </button>
+</div>
+
+<script>
+  // header scroll state
+  const header = document.getElementById('site-header');
+  const logoLink = document.getElementById('logoLink');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const navToggleBtn = document.getElementById('navToggle');
+  const navCta = document.getElementById('navCta');
+  function setScrolled(on){
+    header.classList.toggle('is-scrolled', on);
+    header.classList.toggle('bg-cream/85', on);
+    header.classList.toggle('backdrop-blur-md', on);
+    header.classList.toggle('border-black/[0.07]', on);
+    header.classList.toggle('py-3.5', on);
+    header.classList.toggle('py-5', !on);
+    logoLink.classList.toggle('text-ink', on);
+    logoLink.classList.toggle('text-paper', !on);
+    navLinks.forEach(a => { a.classList.toggle('text-ink', on); a.classList.toggle('text-paper', !on); });
+    navToggleBtn.classList.toggle('text-ink', on);
+    navToggleBtn.classList.toggle('text-paper', !on);
+    navToggleBtn.classList.toggle('border-black/15', on);
+    navToggleBtn.classList.toggle('border-white/35', !on);
+    navCta.classList.toggle('bg-ink', on);
+    navCta.classList.toggle('text-cream', on);
+    navCta.classList.toggle('border-ink', on);
+    navCta.classList.toggle('bg-cream', !on);
+    navCta.classList.toggle('text-ink', !on);
+    navCta.classList.toggle('border-cream', !on);
+  }
+  window.addEventListener('scroll', () => setScrolled(window.scrollY > 40));
+
+  // mobile menu toggle
+  const mobileMenu = document.getElementById('mobileMenu');
+  navToggleBtn.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('opacity-100');
+    mobileMenu.classList.toggle('opacity-0', !isOpen);
+    mobileMenu.classList.toggle('translate-y-0', isOpen);
+    mobileMenu.classList.toggle('-translate-y-4', !isOpen);
+    mobileMenu.classList.toggle('pointer-events-none', !isOpen);
+    navToggleBtn.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    navToggleBtn.children[0].style.transform = isOpen ? 'translateY(6.4px) rotate(45deg)' : '';
+    navToggleBtn.children[1].style.opacity = isOpen ? '0' : '1';
+    navToggleBtn.children[2].style.transform = isOpen ? 'translateY(-6.4px) rotate(-45deg)' : '';
+  });
+  mobileMenu.querySelectorAll('a:not(#mobileNavCta)').forEach(a => a.addEventListener('click', () => navToggleBtn.click()));
+
+  // reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.12});
+  revealEls.forEach(el => io.observe(el));
+
+  // ---------- Nav scroll-spy: highlight the nav item for the section in view ----------
+  const spySections = ['work','pricing','method','briefings']
+    .map(id => ({ el: document.getElementById(id), link: document.querySelector(`a.nav-link[href="#${id}"]`) }))
+    .filter(s => s.el && s.link);
+
+  function setActiveNavLink(link){
+    spySections.forEach(s => s.link.classList.remove('nav-active'));
+    if(link) link.classList.add('nav-active');
+  }
+
+  if (spySections.length) {
+    const spyObserver = new IntersectionObserver((entries) => {
+      const visible = entries.filter(e => e.isIntersecting);
+      if(visible.length){
+        visible.sort((a,b) => b.intersectionRatio - a.intersectionRatio);
+        const match = spySections.find(s => s.el === visible[0].target);
+        if(match) setActiveNavLink(match.link);
+      }
+    }, { rootMargin: '-40% 0px -50% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] });
+    spySections.forEach(s => spyObserver.observe(s.el));
+  }
+
+  // ---------- Hero CTA buttons ----------
+  const heroBookBtn = document.getElementById('heroBookBtn');
+  if (heroBookBtn) {
+    heroBookBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      openConsultOverlay();
+    });
+  }
+  const heroProcessBtn = document.getElementById('heroProcessBtn');
+  if (heroProcessBtn) {
+    heroProcessBtn.addEventListener('click', function(){
+      const methodSection = document.getElementById('method');
+      const methodLink = document.querySelector('a.nav-link[href="#method"]');
+      setActiveNavLink(methodLink);
+      setTimeout(() => {
+        methodSection.classList.add('section-pulse');
+        setTimeout(() => methodSection.classList.remove('section-pulse'), 1300);
+      }, 550);
+    });
+  }
+
+  // method accordion + gauge
+  const methodItems = document.querySelectorAll('.method-item');
+  const gaugeVal = document.getElementById('gauge-val');
+  methodItems.forEach(item => {
+    item.addEventListener('click', () => {
+      methodItems.forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+      animateGauge(parseInt(item.dataset.gauge, 10));
+    });
+  });
+  function animateGauge(target){
+    let current = parseInt(gaugeVal.textContent, 10);
+    const step = current < target ? 1 : -1;
+    const t = setInterval(() => { current += step; gaugeVal.textContent = current; if(current === target) clearInterval(t); }, 14);
+  }
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if(!isOpen) item.classList.add('open');
+    });
+  });
+
+  // testimonial carousel
+  const testimonials = [
+    [
+      {id:'harborview', brand:'Harborview Developments', quote:"Error.404's site AI caught a structural sequencing conflict before it cost us three weeks. That alone paid for the engagement.", name:'Elena Marsh', role:'VP of Construction', initials:'EM'},
+      {id:'cascade', brand:'Cascade Builders', quote:'Their safety AI flagged three near-misses in the first month. Our incident rate is down for the first time in years.', name:'Tomás Rivera', role:'Director of Operations', initials:'TR'}
+    ],
+    [
+      {id:'northgate', brand:'Northgate Civil', quote:'The predictive scheduling model kept our corridor project on pace through two supply-chain disruptions.', name:'Priya Anand', role:'Project Executive', initials:'PA'},
+      {id:'solari', brand:'Solari Green Homes', quote:'We hit net-zero on our first community build thanks to the embodied-carbon modeling Error.404 ran during design.', name:'Marcus Lund', role:'Principal', initials:'ML'}
+    ],
+    [
+      {id:'fieldstone', brand:'Fieldstone Logistics', quote:'Computer-vision monitoring across 900,000 square feet gave us visibility we never had with manual walkthroughs.', name:'Ines Kowalski', role:'Site Safety Lead', initials:'IK'},
+      {id:'riverline', brand:'Riverline Infrastructure', quote:'Error.404 treated our legacy permitting constraints as real design inputs, not an afterthought.', name:'David Okoye', role:'Managing Partner', initials:'DO'}
+    ]
+  ];
+  let testiIndex = 0;
+  const testiTrack = document.getElementById('testiTrack');
+  function renderTesti(){
+    const pair = testimonials[testiIndex];
+    testiTrack.innerHTML = pair.map(t => `
+      <div class="testi-card msg-in grid grid-cols-[1fr_130px] bg-cream2 border border-black/[0.07] rounded-2xl overflow-hidden">
+        <div class="p-6 flex flex-col justify-between">
+          <div class="font-serif text-base opacity-60 mb-3.5">${t.brand}</div>
+          <q class="text-[15px] leading-relaxed not-italic">${t.quote}</q>
+          <div class="mt-4">
+            <b class="block text-[13.5px]">${t.name}</b>
+            <span class="text-[11.5px] text-inksoft uppercase tracking-wide">${t.role}</span>
+            <a href="client-details.html?id=${t.id}" class="group inline-flex items-center gap-1 text-[11.5px] font-semibold text-ink mt-2.5">Visit My Details <span class="inline-block transition-transform duration-300 group-hover:translate-x-0.5">→</span></a>
+          </div>
+        </div>
+        <div class="flex items-center justify-center text-paper font-serif text-[26px]" style="background:linear-gradient(155deg,#7E8A64,#374330);">${t.initials}</div>
+      </div>`).join('');
+  }
+  function swapTesti(dir){
+    testiTrack.style.transition = 'opacity .25s ease, transform .25s ease';
+    testiTrack.style.opacity = 0;
+    testiTrack.style.transform = dir > 0 ? 'translateX(-10px)' : 'translateX(10px)';
+    setTimeout(() => {
+      testiIndex = (testiIndex + dir + testimonials.length) % testimonials.length;
+      renderTesti();
+      testiTrack.style.transform = dir > 0 ? 'translateX(10px)' : 'translateX(-10px)';
+      requestAnimationFrame(() => { testiTrack.style.opacity = 1; testiTrack.style.transform = 'translateX(0)'; });
+    }, 220);
+  }
+  document.getElementById('nextTesti').addEventListener('click', () => swapTesti(1));
+  document.getElementById('prevTesti').addEventListener('click', () => swapTesti(-1));
+
+  // ---------- Founders section ----------
+  // Both founders now have real data. See founder-details.html for full
+  // profiles (search "const founders" in that file).
+  // `image` is empty until real photos are supplied — the avatar renders
+  // the initials block until then, and automatically falls back to it again
+  // if a supplied image URL ever fails to load.
+  const founders = [
+    {
+      id: 'akib-mahmood',
+      name: 'Akib Mahmood',
+      role: 'Data Scientist & AI Solutions Developer',
+      intro: 'Works across analytics, data engineering, and applied AI — building LLM-powered tools, RAG assistants, and BI dashboards for clients across retail, healthcare, education, and e-commerce.',
+      expertise: ['Add expertise'],
+      initials: 'AM',
+      image: ''
+    },
+    {
+      id: 'wahida-khatun',
+      name: 'Dr. Wahida Khatun',
+      role: 'Founder & Homeopathic Doctor',
+      intro: 'Focuses on patient consultation, individualized homeopathic care, follow-up support, and maintaining a patient-centered approach to healthcare.',
+      expertise: ['Add expertise'],
+      initials: 'WK',
+      image: 'GREEN.jpg'
+    }
+  ];
+  function founderAvatarMarkup(f){
+    // Rectangular block (matches the existing card shape exactly) with the
+    // initials always present as the base layer, and an image overlay that
+    // only renders when a real URL exists. If the image fails to load, it
+    // hides itself via onerror, silently revealing the initials underneath.
+    return `
+      <div class="relative h-full min-h-[150px] flex items-center justify-center text-paper font-serif text-[26px] overflow-hidden" style="background:linear-gradient(155deg,#7E8A64,#374330);">
+        <span>${f.initials}</span>
+        ${f.image ? `<img src="${f.image}" alt="${f.name}" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">` : ''}
+      </div>`;
+  }
+  const foundersGrid = document.getElementById('foundersGrid');
+  if (foundersGrid) {
+    foundersGrid.innerHTML = founders.map(f => `
+      <div class="reveal in group bg-cream2 border border-black/[0.07] rounded-2xl overflow-hidden hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 grid grid-cols-[110px_1fr]">
+        ${founderAvatarMarkup(f)}
+        <div class="p-6">
+          <h4 class="font-serif text-[18px] font-medium mb-1">${f.name}</h4>
+          <div class="text-[11.5px] text-inksoft uppercase tracking-wide mb-2.5">${f.role}</div>
+          <p class="text-[13.5px] text-inksoft leading-relaxed mb-3">${f.intro}</p>
+          <a href="founder-details.html?id=${f.id}" class="inline-flex items-center gap-1 text-[13px] font-semibold text-ink">View My Details <span class="inline-block transition-transform duration-300 group-hover:translate-x-0.5">→</span></a>
+        </div>
+      </div>`).join('');
+    // newly-injected cards should also fade in like the rest of the page
+    foundersGrid.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  }
+
+  // contact form
+  document.getElementById('contactForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const note = document.getElementById('formNote');
+    note.style.opacity = '1';
+    e.target.reset();
+  });
+
+  // instant estimate calculator
+  document.getElementById('estBtn').addEventListener('click', () => {
+    const rate = parseFloat(document.getElementById('estType').value);
+    const sqft = parseFloat(document.getElementById('estSqft').value) || 0;
+    const mult = parseFloat(document.getElementById('estTimeline').value);
+    const low = Math.round(sqft * rate * mult * 0.9 / 1000) * 1000;
+    const high = Math.round(sqft * rate * mult * 1.15 / 1000) * 1000;
+    const result = document.getElementById('estResult');
+    const value = document.getElementById('estValue');
+    if(sqft > 0){
+      value.textContent = '$' + low.toLocaleString() + ' – $' + high.toLocaleString();
+    } else {
+      value.textContent = 'Enter a square footage';
+    }
+    result.classList.remove('hidden');
+  });
+
+  // ---------- AI chat widget: drag anywhere + open/close + canned replies ----------
+  (function(){
+    const chat = document.getElementById('aiChat');
+    const bubble = document.getElementById('aiChatBubble');
+    const win = document.getElementById('aiChatWindow');
+    const chatHeader = document.getElementById('aiChatHeader');
+    const closeBtn = document.getElementById('aiChatClose');
+    const body = document.getElementById('aiChatBody');
+    const form = document.getElementById('aiChatForm');
+    const input = document.getElementById('aiChatInput');
+    const quick = document.getElementById('aiChatQuick');
+
+    function pxPosition(){
+      const r = chat.getBoundingClientRect();
+      chat.style.left = r.left + 'px';
+      chat.style.top = r.top + 'px';
+      chat.style.right = 'auto';
+      chat.style.bottom = 'auto';
+    }
+    let dragging = false, moved = false, startX = 0, startY = 0, originLeft = 0, originTop = 0;
+    function dragStart(handleEl){
+      return function(e){
+        pxPosition();
+        dragging = true; moved = false;
+        chat.classList.add('dragging');
+        const point = e.touches ? e.touches[0] : e;
+        startX = point.clientX; startY = point.clientY;
+        originLeft = parseFloat(chat.style.left);
+        originTop = parseFloat(chat.style.top);
+        document.addEventListener('mousemove', dragMove);
+        document.addEventListener('touchmove', dragMove, {passive:false});
+        document.addEventListener('mouseup', dragEnd);
+        document.addEventListener('touchend', dragEnd);
+      };
+    }
+    function dragMove(e){
+      if(!dragging) return;
+      if(e.cancelable) e.preventDefault();
+      const point = e.touches ? e.touches[0] : e;
+      const dx = point.clientX - startX;
+      const dy = point.clientY - startY;
+      if(Math.abs(dx) > 4 || Math.abs(dy) > 4) moved = true;
+      chat.style.left = (originLeft + dx) + 'px';
+      chat.style.top = (originTop + dy) + 'px';
+      clampEl(chat.classList.contains('open') ? win : bubble);
+    }
+    function clampEl(refEl){
+      const r = refEl.getBoundingClientRect();
+      const chatRect = chat.getBoundingClientRect();
+      const offsetLeft = r.left - chatRect.left;
+      const offsetTop = r.top - chatRect.top;
+      let left = parseFloat(chat.style.left);
+      let top = parseFloat(chat.style.top);
+      const minLeft = 8 - offsetLeft, minTop = 8 - offsetTop;
+      const maxLeft = window.innerWidth - r.width - 8 - offsetLeft;
+      const maxTop = window.innerHeight - r.height - 8 - offsetTop;
+      left = Math.min(Math.max(minLeft, left), Math.max(minLeft, maxLeft));
+      top = Math.min(Math.max(minTop, top), Math.max(minTop, maxTop));
+      chat.style.left = left + 'px';
+      chat.style.top = top + 'px';
+    }
+    function dragEnd(){
+      dragging = false;
+      chat.classList.remove('dragging');
+      document.removeEventListener('mousemove', dragMove);
+      document.removeEventListener('touchmove', dragMove);
+      document.removeEventListener('mouseup', dragEnd);
+      document.removeEventListener('touchend', dragEnd);
+    }
+    bubble.addEventListener('mousedown', dragStart(bubble));
+    bubble.addEventListener('touchstart', dragStart(bubble), {passive:true});
+    chatHeader.addEventListener('mousedown', dragStart(chatHeader));
+    chatHeader.addEventListener('touchstart', dragStart(chatHeader), {passive:true});
+
+    bubble.addEventListener('click', () => {
+      if(moved){ moved = false; return; }
+      pxPosition();
+      const isOpen = chat.classList.toggle('open');
+      if(isOpen){ setTimeout(() => clampEl(win), 10); input.focus(); }
+      else { setTimeout(() => clampEl(bubble), 10); }
+    });
+    closeBtn.addEventListener('click', () => {
+      chat.classList.remove('open');
+      setTimeout(() => clampEl(bubble), 10);
+    });
+    window.addEventListener('resize', () => {
+      if(!chat.style.left) return;
+      clampEl(chat.classList.contains('open') ? win : bubble);
+    });
+
+    const replies = {
+      pricing: "We run three engagement tiers: Site Diagnostic ($8,500/audit), Full Build Intelligence ($24,000/month), and Portfolio Command (custom). Want me to scroll you to pricing?",
+      services: "We handle site diagnostics, predictive scheduling, computer-vision safety monitoring, and sustainable material modeling. The 'Process' section above walks through our four-stage method.",
+      contact: "Happy to connect you with the team — the contact form below takes about a minute, and someone will follow up within one business day.",
+      default: [
+        "Good question — a member of the team can go deeper on that. Want me to pull up the contact form?",
+        "That's a bit outside my quick-reply script, but I can point you to the right section of the site if you tell me what you're trying to do.",
+        "I can help with pricing, services, or getting you to a real person — which would help most right now?"
+      ]
+    };
+    function addMsg(text, who){
+      const el = document.createElement('div');
+      el.className = 'msg-in max-w-[82%] text-[13.5px] leading-relaxed px-3.5 py-2.5 rounded-2xl ' +
+        (who === 'bot' ? 'bg-cream2 rounded-bl-sm self-start text-ink' : 'bg-forest900 text-paper rounded-br-sm self-end');
+      el.textContent = text;
+      body.appendChild(el);
+      body.scrollTop = body.scrollHeight;
+    }
+    function botReply(key){
+      const typing = document.createElement('div');
+      typing.className = 'flex gap-1 items-center px-3.5 py-3 rounded-2xl rounded-bl-sm bg-cream2 self-start';
+      typing.innerHTML = '<span class="typing-dot w-[5px] h-[5px] rounded-full bg-inksoft opacity-50"></span><span class="typing-dot w-[5px] h-[5px] rounded-full bg-inksoft opacity-50"></span><span class="typing-dot w-[5px] h-[5px] rounded-full bg-inksoft opacity-50"></span>';
+      body.appendChild(typing);
+      body.scrollTop = body.scrollHeight;
+      setTimeout(() => {
+        typing.remove();
+        addMsg(replies[key] || replies.default[Math.floor(Math.random()*replies.default.length)], 'bot');
+      }, 650 + Math.random()*400);
+    }
+    quick.addEventListener('click', (e) => {
+      const btn = e.target.closest('button[data-q]');
+      if(!btn) return;
+      addMsg(btn.textContent, 'user');
+      botReply(btn.dataset.q);
+    });
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const val = input.value.trim();
+      if(!val) return;
+      addMsg(val, 'user');
+      input.value = '';
+      const lower = val.toLowerCase();
+      let key = null;
+      if(lower.includes('price') || lower.includes('cost') || lower.includes('plan')) key = 'pricing';
+      else if(lower.includes('service') || lower.includes('do you') || lower.includes('offer')) key = 'services';
+      else if(lower.includes('contact') || lower.includes('talk') || lower.includes('human') || lower.includes('call')) key = 'contact';
+      botReply(key);
+    });
+  })();
+
+  // ============ প্রাইসিং কার্ড সিলেক্ট লজিক (fixed) ============
+  // এই ফাংশনটি data-* অ্যাট্রিবিউট থেকে সরাসরি সিলেক্টেড/ডিফল্ট স্টাইল বসায়,
+  // ফলে "Full Build Intelligence" কার্ডটি (যেটার ডিফল্ট বর্ডার আলাদা) ডিসিলেক্ট
+  // হলে আর বর্ডার হারায় না — আগের রেজেক্স-ভিত্তিক কোডে এই বাগটি ছিল।
+  const cards = document.querySelectorAll('.pricing-card');
+  const cardBgClasses = ['bg-paper', 'bg-forest900'];
+  const cardTextClasses = ['text-ink', 'text-paper'];
+  const btnBgClasses = ['bg-ink', 'bg-paper'];
+  const btnTextClasses = ['text-cream', 'text-forest950'];
+
+  function selectPricingCard(selected){
+    cards.forEach(c => {
+      const isSelected = c === selected;
+      c.classList.remove(...cardBgClasses, ...cardTextClasses, 'border-2', 'border-sage', 'border', 'border-black/[0.07]', 'active');
+
+      const btn = c.querySelector('.select-plan-btn');
+      btn.classList.remove(...btnBgClasses, ...btnTextClasses);
+
+      if(isSelected){
+        c.classList.add(c.dataset.bg, c.dataset.text, 'border-2', 'border-sage', 'active');
+        btn.classList.add(c.dataset.btnBg, c.dataset.btnText);
+      } else {
+        c.classList.add('bg-paper', 'text-ink', 'border', 'border-black/[0.07]');
+        btn.classList.add(c.dataset.btnDefaultBg, c.dataset.btnDefaultText);
+      }
+    });
+  }
+
+  cards.forEach(card => {
+    card.addEventListener('click', function(e) {
+      // যদি বোতামে ক্লিক করা হয়, তাহলে কার্ড সিলেক্ট হবে না
+      if (e.target.closest('.select-plan-btn')) return;
+      selectPricingCard(this);
+    });
+  });
+
+// ============ প্ল্যান বাটনে ক্লিক করলে চেকআউট পেজে যাওয়া (শুধুমাত্র সিলেক্ট করা কার্ডের) ============
+// পেমেন্ট এখন আর index.html-এর ভেতরে overlay হিসেবে নেই — এটি এখন আলাদা
+// payment.html পেজে চলে গেছে। Custom/contact-sales প্ল্যানের (Portfolio Command)
+// জন্য existing consultation overlay ব্যবহার করা হচ্ছে, নতুন কোনো মডাল বানানো হয়নি।
+document.querySelectorAll('.select-plan-btn').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    const card = this.closest('.pricing-card');
+
+    // চেক করা হচ্ছে: এই কার্ডটি কি সিলেক্ট করা আছে?
+    if (!card.classList.contains('active')) {
+      // যদি সিলেক্ট করা না থাকে, তাহলে এই কার্ডটি সিলেক্ট হবে (চেকআউটে যাবে না)
+      card.click();
+      return;
+    }
+
+    const planId = card.dataset.planId;
+    const planPrice = card.dataset.price;
+
+    if (planPrice === 'custom') {
+      openConsultOverlay();
+      return;
+    }
+
+    window.location.href = 'payment.html?plan=' + encodeURIComponent(planId);
+  });
+});
+
+// ============ কনসালটেশন ওভারলে ওপেন/ক্লোজ ============
+const consultOverlay = document.getElementById('consultationOverlay');
+
+function openConsultOverlay() {
+  consultOverlay.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  // আজকের তারিখ সেট করা
+  const today = new Date().toISOString().split('T')[0];
+  document.getElementById('consultDate').setAttribute('min', today);
+}
+
+function closeConsultOverlay() {
+  consultOverlay.classList.add('hidden');
+  document.body.style.overflow = 'auto';
+  document.getElementById('consultForm').reset();
+  document.getElementById('consultSuccess').classList.add('hidden');
+  document.querySelector('#consultForm button[type="submit"]').classList.remove('hidden');
+}
+
+document.getElementById('closeConsultOverlay').addEventListener('click', closeConsultOverlay);
+document.getElementById('closeConsultOverlayDesktop').addEventListener('click', closeConsultOverlay);
+document.getElementById('closeConsultSuccess').addEventListener('click', closeConsultOverlay);
+
+consultOverlay.addEventListener('click', function(e) {
+  if (e.target === this) closeConsultOverlay();
+});
+
+// ============ Book Consultation বাটন (হেডার + মোবাইল মেনু) — এখানেই মূল বাগ ছিল ============
+// আগে onclick অ্যাট্রিবিউটটি ভুলবশত class="..." স্ট্রিং-এর ভেতরে লেখা ছিল,
+// তাই ব্রাউজার সেটাকে বৈধ ইভেন্ট হ্যান্ডলার হিসেবে ধরত না এবং বাটনে ক্লিক করলে
+// শুধু href="#" অনুযায়ী পেজের উপরে চলে যেত, ওভারলে খুলত না।
+document.getElementById('navCta').addEventListener('click', function(e) {
+  e.preventDefault();
+  openConsultOverlay();
+});
+
+const mobileNavCta = document.getElementById('mobileNavCta');
+if (mobileNavCta) {
+  mobileNavCta.addEventListener('click', function(e) {
+    e.preventDefault();
+    navToggleBtn.click(); // মোবাইল মেনু বন্ধ করা
+    openConsultOverlay();
+  });
+}
+
+// ============ কনসালটেশন ফর্ম সাবমিট ============
+document.getElementById('consultForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const firstName = document.getElementById('consultFirstName').value.trim();
+  const lastName = document.getElementById('consultLastName').value.trim();
+  const email = document.getElementById('consultEmail').value.trim();
+  const phone = document.getElementById('consultPhone').value.trim();
+  const date = document.getElementById('consultDate').value;
+  const time = document.getElementById('consultTime').value;
+
+  if (!firstName || !lastName || !email || !phone || !date || !time) {
+    alert('Please fill in all required fields.');
+    return;
+  }
+
+  if (!document.getElementById('consultAgreeTerms').checked) {
+    alert('Please agree to the Terms of Service.');
+    return;
+  }
+
+  // সফল মেসেজে ইমেইল ও ফোন দেখানো
+  document.getElementById('confirmEmail').textContent = email;
+  document.getElementById('confirmPhone').textContent = phone;
+
+  // ডেমো: ইমেইল ও এসএমএস সিমুলেশন (কনসোল ও অ্যালার্টে দেখানো)
+  console.log('📧 Email sent to:', email);
+  console.log('📱 SMS sent to:', phone);
+  console.log('📅 Consultation scheduled for:', date, 'at', time);
+  console.log('📝 Message:', document.getElementById('consultMessage').value.trim() || 'No message');
+
+  // UI আপডেট
+  document.querySelector('#consultForm button[type="submit"]').classList.add('hidden');
+  document.getElementById('consultSuccess').classList.remove('hidden');
+});
+</script>
+
+</body>
+</html>
